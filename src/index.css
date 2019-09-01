@@ -1,13 +1,1002 @@
+@import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+
 body {
   margin: 0;
+  padding:0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+ #welcome{
+   height:100vh;
+   width:100vw;
+   position:fixed;
+   background-image: url('./Images/middleBG.png');
+   background-size: cover;
+   transition:2s;
+   z-index: 2;
+ }
+
+ #welcomeContent{
+   transition:o.5s;
+   position:absolute;
+   left:35%;
+   top:35%;
+ }
+ 
+ #welcomeContent h1{
+  position:fixed;
+  top:28%;
+  left:40%;
+  animation:first 1.5s;
+  color:red;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 3.7rem;
+}
+
+ #welcomeContent h2{
+   position:fixed;
+   top:37%;
+   left:44%;
+   animation:second 1.5s;
+   color:red;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: bold;
+   font-size:3.2rem;
+}
+
+ #welcomeContent h3{
+   position:fixed;
+   top:45%;
+   left:30%;
+   color:white;
+   animation:third 1.5s;
+   font-family: 'Courier New', Courier, monospace;
+   font-weight: bold;
+   font-size:2.5rem;
+   /* height:2.5rem;
+   width:40rem; */
+}
+
+
+ #welcomeButton{
+   position:fixed;
+   top:58%;
+   left:47%;
+   width:6rem;
+   height:5rem;
+   animation:fourth 1.5s;
+   color:white;
+   font-family: cursive;
+   border-radius:50%;
+   transition:0.25s;
+}
+
+#welcomeButton:hover{
+    border: 2px yellow solid;
+    
+}
+ 
+ @keyframes first{
+   from {top:-20%;}
+   to {top:28%;}
+}
+
+ @keyframes second{
+   from {left:-20%;}
+   to{left:44%;}
+}
+
+ @keyframes third{
+  from {right:-20%;}
+  to{right:70%;}
+}
+
+@keyframes fourth{
+  from {top:120%;}
+  to {top:58%;}
+}
+
+
+ .App{
+  margin:0;
+  padding:0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+#header{
+  background:linear-gradient(to bottom,#6550DB,#822F96);
+  border:2px solid #9e363a;
+  height:5rem;
+  width:100%;
+  display: grid;
+  grid-template-columns: 23% 42% 15% 20%;
+
+}
+
+#headerHeading{
+  margin:auto;
+  color:whitesmoke;
+  font-family: cursive;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 2.7rem;
+  
+}
+
+#icon{
+  height:3rem;
+  width:3rem;
+  margin:auto;
+  margin-top:-5px;
+}
+
+#headerHeading:hover{
+text-shadow:
+   -1.5px -1.5px 0 rgb(233, 66, 66),  
+    1.5px -1.5px 0 rgb(233, 66, 66),
+    -1.5px 1.5px 0 rgb(233, 66, 66),
+     1.5px 1.5px 0 rgb(233, 66, 66);
+}
+
+
+#headerSearchBar{
+  height:2.1rem;
+  width:100%;
+  margin:auto;
+  text-align:center;
+  border-radius:1rem;
+  border:none;
+}
+
+#headerSearchBar:hover,#headerSearchBar:focus,#headerSearchButton:hover{
+  border:2px #83D0F6 solid;
+  color:white;
+}
+
+#headerSearchButton{
+  height:2.3rem;
+  width:60%;
+  margin:auto;
+  margin-left:5px;
+  border-radius:1rem;
+  border:none;
+  background: linear-gradient(to bottom,#EC3B43,#F15B61);
+}
+
+
+#headerSignIn{
+  height:2.3rem;
+  width:45%;
+  margin:auto;
+  border-radius:1rem;
+  border:none;
+  background: linear-gradient(to top,#EC3B43,#F15B61);
+}
+
+#headerSignIn:hover{
+  border:2px #83D0F6 solid;
+  color:white;
+}
+
+
+#headerMenuImg{
+  height:3rem;
+  width: 38%;
+  margin:auto;
+  cursor: pointer;
+  transition:0.25s;
+}
+
+#headerMenuImg:hover{
+  height:3.1rem;
+  width:41%;
+}
+
+#afterLogIn{
+  margin:auto;
+  color:wheat;
+  font-family: cursive;
+  width:90%;
+  text-shadow:
+  -1px -1px 0 rgb(233, 66, 66),  
+  1px -1px 0 rgb(233, 66, 66),
+  -1px 1px 0 rgb(233, 66, 66),
+    1px 1px 0 rgb(233, 66, 66);
+}
+
+
+
+#middlePart{
+  width:100%;
+  margin:0;
+  display:grid;
+  grid-template-columns: 20% 80%;
+  height:150vh;
+  background:url('./Images/bg2.png');
+  background-size: cover;
+
+}
+
+
+
+
+#middleLeft{
+  border-right:2px ridge #9e363a;
+  border-left:2px ridge #9e363a;
+  /* background: repeating-linear-gradient(to bottom,#D3CCE3,#E9E4F0); */
+  height:150vh;
+  width:100%;
+  display:grid;
+  grid-template-rows: 8% 92%;
+
+}
+
+.mList{
+  height:100%;
+  width:100%;
+}
+
+/* .listButton{
+
+  width:100%;
+  height:100%;
+} */
+.mList button[type="button"]{
+  width:100%;
+  background:none;
+  font-size:1.2rem;
+  font-weight: bold;
+  border-radius:3px;
+  height:100%;
+  border-bottom:2px #58585A solid;
+  font-style: italic;
+  cursor:text;
+}
+
+.mList button[type="button"]:hover{
+  color:#0050BA;
+}
+
+.movieListDiv{
+  text-align:center;
+  height:100%;
+  width:100%;
+
+}
+
+.movieListDiv ul{
+  margin:auto;
+  list-style-image: url('./Images/film1.png');
+  height:70%;
+}
+
+#movieList li{
+  font-family: fantasy;
+  margin:1rem;
+  font-size: 1.1rem;
+  cursor:pointer;
+  border-bottom:1px black solid;
+  height:8%;
+}
+
+#middle{
+  height:150vh;
+  width:100%;
+  justify-items: center;
+  margin:auto;
+  animation: blide 5s linear 1s infinite normal;
+  /* background-image: url('./Images/midddle2BG.png'); */
+  background-size:cover;
+  display:grid;
+  grid-template-rows: 42% auto;
+}
+
+#images{
+  height:100%;
+  width:70%;
+  border:1.5px black solid;
+  animation: sid 5s linear 1s infinite normal;
+  background-size:cover;
+  /* margin:auto; */
+  border-radius:10px;
+  transition:0.5s;
+  display:none;
+}
+
+/* #images:hover{
+  height:100%;
+} */
+
+.sliding{
+  height:60vh;
+  width:60vw;
+  position: relative;
+  top:20%;
+  border-radius: 10px;
+  border:3px #6B3084 solid;
+}
+
+.sliding img{
+  height:60vh;
+  width:60vw;
+  border-radius: 7px;
+}
+
+
+#images img{
+  height:80%;
+  width:100%;
+  border-radius:2px;
+  border-bottom:2px black solid;
+}
+
+
+#images p{
+  float:left;
+  margin:1.8rem;
+  margin-left:3.5rem;
+  font-size:1.5rem;
+  font-weight: bold;
+}
+
+#certiButton{
+  height:3rem;
+  width:3rem;
+  border-radius:50%;
+  background:none;
+  margin-top:-0.5rem;
+  cursor: text;
+  border:2px black solid;
+  font-weight: bold;
+}
+
+#info{
+  height: 90%;
+  width: 90%;
+  margin:auto;
+  margin-top:1rem;
+  display:grid;
+  grid-auto-rows: 20% 40% 40%;
+
+}
+
+
+#mInfo1{
+  display:grid;
+  width:95%;
+  grid-template-columns: 50% auto;
+  margin-left:1%;
+  margin-top:1.8%;
+
+}
+
+#mInfo2 p{
+  margin-top:3%;
+}
+
+#bookButton{
+  margin:auto;
+  margin-top:0;
+  height:25%;
+  width:20%;
+  border:none;
+  border-radius: 45%;
+  background:linear-gradient(to right,#ff9966,#ff5e62);
+  color:#F21A48;
+  font-weight: bold;
+}
+
+#bookButton:hover{
+  color:white;
+  border:1px white solid;
+}
+
+
+
+
+#Booking{
+  position: fixed;
+ display: none;
+  left: 32%;
+  top:8%;
+  height:65vh;
+  width:50vw;
+  border:2px black solid;
+  border-radius:3%;
+  background:url(./Images/bg.jpg);
+ 
+}
+
+ #booking{
+  display:grid;
+  grid-template-rows:5% 10% 70% 15%;
+  text-align: center;
+}
+ #bInputs{
+  margin:0.5rem;
+}
+
+#bInputs input[type="text"],#bInputs select{
+  border-radius:1rem;
+  width:6rem;
+  border:none;
+}
+
+#bookingContent{
+  display:grid;
+  grid-template-columns: 50% auto;
+}
+
+
+#bookingContent button[type="button"]{
+  width:6rem;
+  border-radius: 30%;
+  border:none;
+  height:2rem;
+}
+
+#bInputs p{
+  font-weight: bold;
+}
+
+
+#cBook{
+  margin-top:0.5rem;
+  justify-self: center;
+  /* height:20%;
+  width:100%; */
+  background: linear-gradient(to right,#2B353F,#475462);
+  border-radius: 50%;
+}
+
+#cBook:hover{
+  color:white;
+}
+
+
+#seats{
+  height:20rem;
+  width:90%;
+  transition: 0.25s linear;
+  margin-left:0;
+}
+
+#bookingCross{
+  float:right;
+  height:2rem;
+  width:2rem;
+  cursor:pointer;
+}
+
+#historyContent td{
+  margin:5px;
+}
+
+#menuBar{
+  height:80%;
+  width:0;
+  border:2px black solid;
+  display:none;
+  background: url(./Images/menuback1.png);
+  background-size: cover;
+  position:fixed;
+  right: 0px;
+  top:5rem;
+  transition:1s;
+  z-index: 2;
+
+}
+
+#menuBar h2{
+  color:#18111A;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 600;
+}
+
+
+#menuList{
+  padding:0.6rem;
+  margin:0;
+}
+
+#menuList li{
+  border-bottom:1px black solid;
+  margin-bottom:0.5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  list-style-type: none;
+  font-size:1.4rem;
+  cursor: pointer;
+
+}
+#menuList li:hover{
+  font-size: 1.45rem;
+  font-weight: bold;
+  color:blue;
+  
+  }
+  
+
+#menuBack{
+  height: 2rem;
+  width:2rem;
+  cursor:pointer;
+  float:left;
+  animation:rotate 0.8s linear;
+}
+
+@keyframes rotate{
+  from {transform:rotate(-180deg);}
+
+  to {transform:rotate(0deg);}
+}
+
+#menubar2{
+  display:none;
+}
+
+
+
+
+
+
+#CrossBH{
+  height:2rem;
+  width:2rem;
+  float:right;
+  cursor: pointer;
+}
+
+
+
+#transparentBack{
+  height:100vh;
+  width:100vw;
+  background-color: white;
+  opacity:0.5;
+  position:fixed;
+  display:none;
+}
+
+#Sign{
+  /* background: linear-gradient(to right,#0f8,#0f0); */
+  background:url(./Images/bg.jpg);
+  border: 2px solid black;
+  border-radius: 1rem;
+  position: fixed;
+  z-index: 3;
+  display:none;
+  left: 37%;
+  top:13%;
+  height:0;
+  width:35%;
+  text-align: center;
+  transition:0.5s;
+
+}
+
+#Sign p{
+  font-weight: bolder;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#forgotPass{
+  font-weight: bold;
+  cursor:pointer;
+}
+
+#forgotPass:hover{
+  color:#00303F;
+}
+
+#fPassTable tr{
+ margin:1rem;
+}
+
+.CrossLS{
+  height:2rem;
+  width:2rem;
+  cursor:pointer;
+  float:right;
+}
+
+#Sign input[type="text"], #Sign input[type="password"],#Sign input[type="email"]{
+  border-radius: 1.5rem;;
+  border:1px solid blue;
+  width:9rem;
+  transition:0.25s;
+  text-align: center;
+}
+
+
+#Sign input[type="text"]:hover,#Sign input[type="password"]:hover,#Sign input[type="email"]:hover{
+  width:10.5rem;
+  border:2px solid blue;
+}
+
+
+#Sign input[type="text"]:focus,#Sign input[type="password"]:focus,#Sign input[type="email"]:focus{
+   width:10.5rem;
+   border:2px solid blue;
+}
+
+#Sign button[type="button"],#Sign button[type="reset"]{
+  border-radius:2rem;
+  width:6rem;
+  height:2.5rem;
+  transition:0.3s;
+  border:none;
+  color:#00303F;
+}
+
+#bSignup,#bSignIn,#BSignIn,#sButton{
+  border-radius:2rem;
+  width:6rem;
+  height:2.5rem;
+  transition:0.3s;
+  color:#00303F;
+}
+
+
+#bSignup:hover,#bSignIn:hover,#BSignIn:hover,#Sign button[type="button"]:hover, #Sign button[type="reset"]:hover,#sButton:hover{
+  width:6.5rem;
+  height:2.6rem;
+}
+
+td{
+  margin:0.5rem;
+  text-align: center;
+  width:30%;
+}
+
+.lTable{
+  height:60%;
+}
+
+label,.aSignUp{
+  text-align: center;
+  font-size:1.2rem;
+  font-weight: bold;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+#footer{
+  display:grid;
+  grid-template-columns: 20% auto auto;
+  background:linear-gradient(to top,#6550DB,#822F96);;
+  height:11vh;
+  width:100%;
+  border:2px solid #9e363a;
+}
+
+#F_title{
+  margin:auto;
+  color:whitesmoke;
+  font-family: cursive;
+  font-weight: bolder;
+  cursor: pointer;
+
+}
+
+#conText{
+  margin:auto;
+  color:whitesmoke;
+  margin-left:-5rem;
+  font-size:1.2rem;
+}
+
+#footerMid{
+  margin:0;
+}
+ 
+#imageDiv{
+  margin:auto;
+}
+
+.image{
+  height:1.6rem;
+  width:1.6rem;
+  margin-right: 0.5rem;
+  margin-top:0.6rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition:height 0.25s;
+  transition:width 0.25s;
+}
+
+.image:hover{
+  border:1.5px solid blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#goBackList{
+  display:none;
+}
+
+
+
+#headerMenuImg2{
+  display:none;
+}
+
+
+
+
+
+@media(max-width:451px){
+
+#goBackList{
+  height:1.3rem;
+  width:1.3rem;
+  display:none;
+  margin-top:3px;
+  
+}
+
+  #welcome{
+  display:none;
+}
+
+#headerSearchBar{
+  display:none;
+}
+
+#headerSearchButton{
+  display:none;
+}
+
+#headerHeading{
+  font-size:1.8rem;
+}
+
+#headerSignIn{
+  display:none;
+}
+
+
+#middlePart{
+  grid-template-columns: 0% 100% ;
+  height:80vh;
+}
+
+#middleLeft{
+  height:80vh;
+  display:none;
+}
+
+.movieListDiv ul{
+  height:90%;
+}
+
+#middle{
+  height:80vh;
+  width:100vw;
+  overflow-y:scroll;
+}
+
+.sliding{
+  top:0;
+  /* left:2.5vw; */
+  width:95vw;
+  height:50vh;
+}
+
+.slidingImg{
+  height:80vh;
+  width:95vw;
+  text-align:center;
+  margin:auto;
+  left:2.5vw;
+}
+
+.sliding img{
+  height:50vh;
+  width:95vw;
+}
+
+
+
+.slidingImg h1{
+  font-size:2rem;
+}
+
+
+#images{
+  width:95vw;
+
+}
+
+#images p{
+  float:left;
+  margin-left:0.8rem;
+  margin:0.55rem;
+  font-size:0.7rem;
+  font-weight: bold;
+}
+
+#certiButton{
+  height:1.6rem;
+  width:1.6rem;
+  font-size: 0.6rem;
+  border-radius:50%;
+  text-align: center;
+  background:none;
+  cursor: text;
+  border:2px black solid;
+  font-weight: bold;
+}
+
+#info{
+  grid-template-rows:10% 80% 10%;
+}
+
+#mInfo1 h4{
+  font-size: 0.7rem;
+  font-weight:bold;
+}
+
+#mInfo2{
+  margin:auto;
+}
+
+.movieListDiv{
+  height:80vh;
+}
+
+#bookButton{
+  height:100%;
+  width:85%;
+  font-size:0.9rem;
+  border-radius:45%;
+}
+
+#Booking{
+  height:100vh;
+  width:100vw;
+  top:0;
+  left:0;
+}
+
+#seats{
+  display:none;
+}
+
+#bookingContent{
+  grid-template-columns: 100%;
+}
+
+#header{
+  grid-template-columns: 50% auto;
+  height:10vh;
+}
+
+#footer{
+  height:10vh;
+}
+
+#headerHeading{
+  margin-left:10px;
+}
+
+#headerMenuImg{
+  display:none;
+
+}
+
+#headerMenuImg2{
+  display:block;
+  height:2.2rem;
+  width:2.5rem;
+  margin:auto;
+  margin-right: 10px;
+
+}
+
+.image{
+  height:1.1rem;
+  width:1.1rem;
+  margin-right: 0.3;
+  margin-top:0.1rem;
+}
+
+#menubar2{
+  width:99.5vw;
+  text-align: center;
+  height:0;
+  position:fixed;
+  background:whitesmoke;
+  top:10vh;
+  display:none;
+  transition:0.5s;
+  border:2px pink solid;
+  z-index: 2;
+}
+
+#menubar2 button[type="button"]{
+  background:none;
+  height:95%;
+  margin-bottom:3px;
+  border:none;
+  margin:10px;
+  border-bottom:2px black solid;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#menuSearch{
+  text-align: center;
+  border-radius:10px;
+  border:1px black solid;
+}
+#mAfterLogin{
+  margin:auto;
+}
+
+#Sign{
+  height:0;
+  display:none;
+  width:100vw;
+  left:0;
+  top:10vh;
+  transition:0.5s;
+}
+
+#afterLogIn{
+  display:none;
+}
+
+#conText{
+  font-size:1rem;
+}
+
+
+
 }
