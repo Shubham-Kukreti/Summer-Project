@@ -289,7 +289,7 @@ document.addEventListener("click",(e)=>{
         
         document.getElementById("menubar2").style.display="grid"
         document.getElementById("menubar2").style.gridTemplateRows="15% 15% 15% 15% 15% 15% 10%";
-        setTimeout(() => {document.getElementById("menubar2").style.height="45vh"}, 200);
+        setTimeout(() => {document.getElementById("menubar2").style.height="50vh"}, 200);
             if(localStorage.getItem('token')!=undefined){
                 document.getElementById("menuSignIn").style.display="none";
                 
@@ -323,7 +323,7 @@ document.addEventListener("click",(e)=>{
         j=0;
     }
     
-    else if(e.target.id=="menuBackList" || e.target.id=="goBackList"){
+    else if(e.target.id=="menuBackList" || e.target.id=="goBackList" || e.target.id=="list"){
         document.getElementById("middlePart").style.gridTemplateColumns="100% 0%"
         document.getElementById("middle").style.display="none";
         document.getElementById("menubar2").style.display="none";

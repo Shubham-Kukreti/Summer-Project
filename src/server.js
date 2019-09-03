@@ -108,10 +108,10 @@ const myKey="ticket";
 
 // }
 
-// mongoClient.connect(mongoUrl,(err,db)=>{
+// mongoClient.connect(mdkey,(err,db)=>{
 //      if(err) throw err;
-//      var dbo=db.db('MyProject');
-//      dbo.collection('MovieData').insertOne({Mdata:movieData},(err,result)=>{
+//      var dbo=db.db('movieOn');
+//      dbo.collection('movieData').insertOne({Mdata:movieData},(err,result)=>{
 //      if(err) throw err;
                
 //      })
@@ -120,10 +120,10 @@ const myKey="ticket";
           
          
 app.post('/sendData',(req,res)=>{
-     mongoClient.connect(mongoUrl,(err,db)=>{
+     mongoClient.connect(mdkey,(err,db)=>{
           if(err) throw err;
-          var dbo=db.db('MyProject');
-          dbo.collection('MovieData').findOne({},(err,result)=>{
+          var dbo=db.db('movieOn');
+          dbo.collection('movieData').findOne({},(err,result)=>{
                if(err) throw err;
                res.send(result.Mdata[req.body.mName])
           })
@@ -173,9 +173,9 @@ app.post('/booked',(req,res)=>{
 app.post('/signup',(req,res)=>{
     
     var passE=crypto.SHA256(req.body.passwordS+myKey).toString();
-     mongoClient.connect(mongoUrl,(err,db)=>{
+     mongoClient.connect(mdkey,(err,db)=>{
         if(err) throw err;
-        var dbo=db.db('MyProject');
+        var dbo=db.db('movieOn');
         dbo.collection('UserInfo').findOne({Email:req.body.email,UserName:req.body.uname},(err,result)=>{
              
              if(err) throw err;
@@ -201,9 +201,9 @@ app.post('/signup',(req,res)=>{
 
 app.post('/signIn',(req,res)=>{
     var PassE=crypto.SHA256(req.body.userPassword+myKey).toString()
-     mongoClient.connect(mongoUrl,(err,db)=>{
+     mongoClient.connect(mdkey,(err,db)=>{
         if(err) throw err;
-        var dbo=db.db('MyProject');
+        var dbo=db.db('movieOn');
         dbo.collection('UserInfo').findOne({UserName:req.body.userName,Password:PassE},(err,result)=>{
              if(err) throw err;  
   

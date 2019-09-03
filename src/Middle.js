@@ -30,8 +30,8 @@ class Middle extends Component {
             document.getElementById("info").innerHTML=""
             document.getElementById("info").insertAdjacentHTML("beforeend",`
             <div id="mInfo1">
-            <h4>Genre : ${res.data.type}</h4>
-            <h4>Language : ${res.data.lang}</h4>
+            <h3>Genre : ${res.data.type}</h3>
+            <h3>Language : ${res.data.lang}</h3>
             </div>
             <div id="mInfo2">
             <h3>SYNOPSIS</h3>
@@ -93,6 +93,9 @@ class Middle extends Component {
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
+  <br />
+  <button type="button" id="list">Checkout Movies</button>
+
 </div>
 
 

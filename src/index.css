@@ -221,7 +221,7 @@ text-shadow:
   display:grid;
   grid-template-columns: 20% 80%;
   height:150vh;
-  background:url('./Images/bg2.png');
+  background:url('./Images/bg3.png');
   background-size: cover;
 
 }
@@ -293,18 +293,38 @@ text-shadow:
   width:100%;
   justify-items: center;
   margin:auto;
-  animation: blide 5s linear 1s infinite normal;
   /* background-image: url('./Images/midddle2BG.png'); */
   background-size:cover;
   display:grid;
   grid-template-rows: 42% auto;
 }
 
+
+/* #images:hover{
+  height:100%;
+} */
+
+
+
+.sliding{
+  height:60vh;
+  width:70vw;
+  position: relative;
+  top:15%;
+  border-radius: 10px;
+  border:3px #6B3084 solid;
+}
+
+.sliding img{
+  height:60vh;
+  width:70vw;
+  border-radius: 7px;
+}
+
 #images{
   height:100%;
-  width:70%;
+  width:80%;
   border:1.5px black solid;
-  animation: sid 5s linear 1s infinite normal;
   background-size:cover;
   /* margin:auto; */
   border-radius:10px;
@@ -312,38 +332,20 @@ text-shadow:
   display:none;
 }
 
-/* #images:hover{
-  height:100%;
-} */
-
-.sliding{
-  height:60vh;
-  width:60vw;
-  position: relative;
-  top:20%;
-  border-radius: 10px;
-  border:3px #6B3084 solid;
-}
-
-.sliding img{
-  height:60vh;
-  width:60vw;
-  border-radius: 7px;
-}
 
 
 #images img{
   height:80%;
   width:100%;
-  border-radius:2px;
+  border-radius:10px;
   border-bottom:2px black solid;
 }
 
 
 #images p{
   float:left;
-  margin:1.8rem;
-  margin-left:3.5rem;
+  margin:2.5%;
+  margin-left:8%;
   font-size:1.5rem;
   font-weight: bold;
 }
@@ -372,7 +374,7 @@ text-shadow:
 
 #mInfo1{
   display:grid;
-  width:100%;
+  width:99%;
   grid-template-columns: 50% auto;
   margin-left:1%;
   margin-top:1.8%;
@@ -380,12 +382,13 @@ text-shadow:
 }
 
 #mInfo2{
-  margin:auto;
+  margin:2rem;
   width:100%;
 }
 
 #mInfo2 p{
   margin-top:0%;
+  font-weight:480;
 }
 
 #bookButton{
@@ -400,13 +403,11 @@ text-shadow:
   font-weight: bold;
 }
 
+
 #bookButton:hover{
   color:white;
   border:1px white solid;
 }
-
-
-
 
 #Booking{
   position: fixed;
@@ -549,10 +550,6 @@ text-shadow:
 }
 
 
-
-
-
-
 #CrossBH{
   height:2rem;
   width:2rem;
@@ -640,6 +637,7 @@ text-shadow:
   transition:0.3s;
   border:none;
   color:#00303F;
+  font-weight: bold;
 }
 
 #bSignup,#bSignIn,#BSignIn,#sButton{
@@ -648,6 +646,7 @@ text-shadow:
   height:2.5rem;
   transition:0.3s;
   color:#00303F;
+  font-weight: bold;
 }
 
 
@@ -761,7 +760,9 @@ label,.aSignUp{
 
 
 
-
+#list{
+  display:none;
+}
 
 #goBackList{
   display:none;
@@ -787,7 +788,7 @@ label,.aSignUp{
   
 }
 
-  #welcome{
+#welcome{
   display:none;
 }
 
@@ -813,6 +814,18 @@ label,.aSignUp{
   height:80vh;
 }
 
+#list{
+  display:block;
+  margin:auto;
+  border-radius:45%;
+  height:2.7rem;
+  border:1.5px whitesmoke solid;
+  background:linear-gradient(to left,#ff9966,#ff5e62);
+  color:whitesmoke;
+  font-weight: 500;
+}
+
+
 #middleLeft{
   height:80vh;
   display:none;
@@ -833,6 +846,7 @@ label,.aSignUp{
   /* left:2.5vw; */
   width:95vw;
   height:50vh;
+  
 }
 
 .slidingImg{
@@ -840,7 +854,6 @@ label,.aSignUp{
   width:95vw;
   text-align:center;
   margin:auto;
-  left:2.5vw;
 }
 
 .sliding img{
@@ -860,11 +873,13 @@ label,.aSignUp{
 
 }
 
+
 #images p{
   float:left;
-  margin-left:0.8rem;
-  margin:0.55rem;
-  font-size:0.7rem;
+  margin-left:2.1%;
+  margin:1.7%;
+  margin-top:2.9%;
+  font-size:0.8rem;
   font-weight: bold;
 }
 
@@ -881,7 +896,7 @@ label,.aSignUp{
 }
 
 #info{
-  grid-template-rows:10% 80% 10%;
+  grid-template-rows:11% 78% 11%;
 }
 
 #mInfo1{
@@ -889,7 +904,7 @@ label,.aSignUp{
   width:100%;
 }
 
-#mInfo1 h4{
+#mInfo1 h3{
   font-size: 0.7rem;
   font-weight:bold;
 }
@@ -963,11 +978,12 @@ label,.aSignUp{
   text-align: center;
   height:0;
   position:fixed;
-  background:whitesmoke;
+  background:url('./Images/mBack.png');
+  background-size: cover;
   top:10vh;
   display:none;
   transition:0.5s;
-  border:2px pink solid;
+  border:2px white solid;
   z-index: 2;
 }
 
@@ -977,7 +993,9 @@ label,.aSignUp{
   margin-bottom:3px;
   border:none;
   margin:10px;
-  border-bottom:2px black solid;
+  border-bottom:2px white solid;
+  color:white;
+  font-size:1.2rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
