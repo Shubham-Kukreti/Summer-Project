@@ -372,15 +372,20 @@ text-shadow:
 
 #mInfo1{
   display:grid;
-  width:95%;
+  width:100%;
   grid-template-columns: 50% auto;
   margin-left:1%;
   margin-top:1.8%;
 
 }
 
+#mInfo2{
+  margin:auto;
+  width:100%;
+}
+
 #mInfo2 p{
-  margin-top:3%;
+  margin-top:0%;
 }
 
 #bookButton{
@@ -879,6 +884,11 @@ label,.aSignUp{
   grid-template-rows:10% 80% 10%;
 }
 
+#mInfo1{
+  margin-left: 0;
+  width:100%;
+}
+
 #mInfo1 h4{
   font-size: 0.7rem;
   font-weight:bold;
@@ -949,7 +959,7 @@ label,.aSignUp{
 }
 
 #menubar2{
-  width:99.5vw;
+  width:98.5vw;
   text-align: center;
   height:0;
   position:fixed;
