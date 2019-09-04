@@ -104,13 +104,19 @@ class Booking extends Component {
                 <td><label>Enter Your Seat(only one): </label></td>
                 <td><input type="text" placeholder="e.g.A1" id="nTicket"></input></td>
             </tr>
+            <br/>
+                    
             {/* <tr>
                 <td><button type="button" onClick={this.book}>Enter</button></td>
             </tr> */}
         </table>
+        
         <img id="seats" src={require('./Images/mHall.png')}/>
-        <p><button type="button" id="cBook"><i class="fas fa-ticket-alt"></i>  Book</button></p>
         </div>
+
+        <button type="button" id="check">Check Seat Availability</button>
+        <button type="button" id="cBook"><i class="fas fa-ticket-alt"></i>  Book</button>
+
         </center>
 
       </div>

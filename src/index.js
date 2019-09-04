@@ -30,7 +30,7 @@ document.addEventListener("click",(e)=>{
       setTimeout(()=>{ReactDOM.render(<SignIn />, document.getElementById('Sign'))},1000);
     }
 
-    else if(e.target.id=="transparentBack" || e.target.className=="CrossLS" || e.target.id=="BSignIn" || e.target.id=="BSignUp" ){
+    else if(e.target.id=="transparentBack" || e.target.className=="CrossLS"){
 
         //document.getElementById("carouselExampleInterval").style.display="block"  
         document.getElementById("transparentBack").style.display="none";
@@ -117,61 +117,6 @@ document.addEventListener("click",(e)=>{
 
         setTimeout(()=>{ReactDOM.render(<BookingHistory />, document.getElementById('Sign'));},1000);
 
-
-        // axios.post('http://localhost:8080/http://localhost:6000/bookingHistory',{uname:localStorage.getItem('userName')})
-        // .then((res)=>{
-        //     if(res.data.status=="none"){
-        //         alert('You haven\'t booked any tickets Yet')
-        //     }
-        //     else{
-        //         document.getElementById("Sign").innerHTML="";
-        //         document.getElementById("transparentBack").style.display="block";
-        //         if(window.outerWidth<450){
-        //             document.getElementById("Sign").style.height="80vh";
-        //         }
-        //         else{
-        //         document.getElementById("Sign").style.display="block";
-        //         }    
-        //         document.getElementById("menubar2").style.display="none";
-
-        //         document.getElementById("Sign").insertAdjacentHTML('beforeend',`
-        //         <img id="CrossBH" src=${require('./Images/cross2.png')}/>
-        //         <h4>Your Latest Booking</h4>
-        //         <br />
-        //         <table>
-        //         <tr>
-        //             <td><label>Movie Name: </label></td>
-        //             <td><p>${res.data.Movie}</p></td>
-        //         </tr>
-                
-        //         <tr>
-        //             <td><label>Show Time: </label></td>
-        //             <td><p>${res.data.ShowTime}</p></td>
-        //         </tr>
-        //         <tr>
-        //             <td><label>Seat No.: </lable></td>
-        //             <td><p>${res.data.SeatNo}</p></td>
-        //         </tr>
-        //         <tr>
-        //             <td><label>Amount Paid:</label></td>
-        //             <td><p>${res.data.Amount}</p></td>
-        //         </tr>
-        //         <tr>
-        //             <td><label>Booking Time:</label></td>
-        //             <td><p>${res.data.BookingTime}</p></td>
-        //         </tr>
-
-                
-        //         </table>
-        //         `)
-                
-                
-        //     }
-
-            
-
-        // })
-        // .catch()  
     }
 
 
@@ -234,19 +179,25 @@ document.addEventListener("click",(e)=>{
         else{
             
             document.getElementById("transparentBack").style.display="block";
-            ReactDOM.render(<Booking />, document.getElementById("Booking"));
-            document.getElementById("Booking").style.display="block"
-        }
+            document.getElementById("Booking").style.display="block";
+            if(window.outerWidth>450)            
+            setTimeout(()=>{document.getElementById("Booking").style.height="65vh"},200);
+            else
+            setTimeout(()=>{document.getElementById("Booking").style.height="80vh"},200);
+            setTimeout(()=>{ReactDOM.render(<Booking />, document.getElementById("Booking"))},1000);
+                   }
     }
 
     else if(e.target.id=="bookingCross"){
         document.getElementById("transparentBack").style.display="none";
-        document.getElementById("Booking").style.display="none"    
         ReactDOM.unmountComponentAtNode(document.getElementById("Booking"),<Booking />)
+        document.getElementById("Booking").style.height="0";
+        setTimeout(()=>{document.getElementById("Booking").style.display="none"},1000);    
+        
 
         }
 
-    else if(e.target.id=="cBook"){
+    else if(e.target.id=="check"){
      var x=document.getElementById("movieTime").value;
      var t=document.getElementById("nTicket").value;
      if(t.length>2 || t==""){
@@ -254,10 +205,58 @@ document.addEventListener("click",(e)=>{
      }
 
      else{
+        // var today= new Date();
+        // var tDate=today.toString()
+        // var p=Math.random();
+        // var pc=parseInt(p*600);
+        // axios.post('http://localhost:8080/http://localhost:6000/booked',{'UserName':localStorage.getItem('userName'),'mName':localStorage.getItem('movieName'),'sTime':x,'Seat':t,'amount':pc,'btime':tDate})
+        // .then((result)=>{
+        //     if(result.data.status=="already"){
+        //         alert("Sorry! Selected Seat is already Booked.\n Please choose another one.")
+        //     }
+        //     else{
+            
+        //     var v=prompt("Your ticket cost is "+ pc + "\nPlease Enter Your Credit Card Number.")
+        //     if(v.length<19 || v=="" || v.length>19)
+        //     {
+        //         alert("Enter a valid Credit Card")
+        //     }
+            
+        //     if(result.data.status=="booked"){
+        //         alert("Your Ticket is successfully booked.\n Enjoy the Show!")
+        //         document.getElementById('Booking').style.display="none";
+        //         document.getElementById('transparentBack').style.display="none";
+           
+        
+        
+        // }
+
+        // }
+        // })
+        // .catch()
+
+        axios.post('http://localhost:8080/http://localhost:6000/checkSeat',{seat:t})
+        .then((res)=>{
+            if(res.data.status=="notAvailable")
+                alert("Selected Seat is already Booked!\n Please select another seat.")
+            else if(res.data.status=="sAvailable"){
+                alert("Selected Seat is Available!")
+                document.getElementById("check").style.display="none"
+                document.getElementById("cBook").style.display="block"
+            }
+        })
+        .catch()
+    }
+    }
+    
+    else if(e.target.id=="cBook")
+    {
+        var x=document.getElementById("movieTime").value;
+        var t=document.getElementById("nTicket").value; 
         var today= new Date();
         var tDate=today.toString()
         var p=Math.random();
-        var pc=parseInt(p*500);
+        var pc=parseInt(p*600);
         axios.post('http://localhost:8080/http://localhost:6000/booked',{'UserName':localStorage.getItem('userName'),'mName':localStorage.getItem('movieName'),'sTime':x,'Seat':t,'amount':pc,'btime':tDate})
         .then((result)=>{
             if(result.data.status=="already"){
@@ -275,13 +274,17 @@ document.addEventListener("click",(e)=>{
                 alert("Your Ticket is successfully booked.\n Enjoy the Show!")
                 document.getElementById('Booking').style.display="none";
                 document.getElementById('transparentBack').style.display="none";
-            }
+           
+        
+        
+        }
 
         }
         })
         .catch()
-        
-    }
+
+
+
     }
 
     else if(e.target.id=="headerMenuImg2"){

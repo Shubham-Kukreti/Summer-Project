@@ -111,7 +111,7 @@ const myKey="ticket";
 // mongoClient.connect(mdkey,(err,db)=>{
 //      if(err) throw err;
 //      var dbo=db.db('movieOn');
-//      dbo.collection('movieData').insertOne({Mdata:movieData},(err,result)=>{
+//      dbo.collection('MovieName').insertOne({mName:movies},(err,result)=>{
 //      if(err) throw err;
                
 //      })
@@ -133,18 +133,13 @@ app.post('/sendData',(req,res)=>{
 })
 
 app.post('/booked',(req,res)=>{
-     mongoClient.connect(mongoUrl,(err,db)=>{
+     var d=new Date().getDate();
+     mongoClient.connect(mdkey,(err,db)=>{
           if(err) throw err;
-          var dbo=db.db('MyProject');
+          var dbo=db.db('movieOn');
           dbo.collection('UserInfo').updateOne({UserName:req.body.UserName},{$set:{BookedTickets:1}},(err,result)=>{
                if(err) throw err;
           })
-     
-          dbo.collection('BookingHistory').findOne({SeatNo:req.body.Seat},(err,result)=>{
-            if(err) throw error
-
-            else if(result==null){
-          
           dbo.collection('BookingHistory').insert({UserName:req.body.UserName,Movie:req.body.mName,ShowTime:req.body.sTime,SeatNo:req.body.Seat,Amount:req.body.amount,BookingTime:req.body.btime},(err,result)=>{
           if(err) throw err;
            
@@ -153,43 +148,57 @@ app.post('/booked',(req,res)=>{
           }
 
           })
-          }
-          else{
-               res.send({'status':'already'})
-          }
-     
-         
-        
-
-
      })
-     })
+})
      
 
+
+
+
+app.post('/checkSeat',(req,res)=>{
+     mongoClient.connect(mdkey,(err,db)=>{
+          if(err) throw err;
+          var dbo=db.db('movieOn');
+          dbo.collection('BookingHistory').findOne({SeatNo:req.body.seat},(err,result)=>{
+          if(err) throw error
+          else if(result==null)
+          res.send({'status':'sAvailable'})
+          else 
+          res.send({'status':'notAvailable'})
+          })
+     })
 })
 
 
 
+
 app.post('/signup',(req,res)=>{
-    
+     var d=new Date().getDate();
     var passE=crypto.SHA256(req.body.passwordS+myKey).toString();
      mongoClient.connect(mdkey,(err,db)=>{
         if(err) throw err;
         var dbo=db.db('movieOn');
-        dbo.collection('UserInfo').findOne({Email:req.body.email,UserName:req.body.uname},(err,result)=>{
+        dbo.collection('UserInfo').findOne({UserName:req.body.uname},(err,result)=>{
              
              if(err) throw err;
             
              else if(result==null){
-                  dbo.collection('UserInfo').insert({FirstName:req.body.firstN,LastName:req.body.lastN,Email:req.body.email,UserName:req.body.uname,Password:passE,BookedTickets:""},(err,result)=>{
-                       if(err) throw err;
-                       res.send({'value':'registered'})
-                  })
-                  
-             }
+               dbo.collection('UserInfo').findOne({Email:req.body.email},(err,result2)=>{
+                    if(err) throw err;
+                    else if(result2==null){
+                         dbo.collection('UserInfo').insert({FirstName:req.body.firstN,LastName:req.body.lastN,Email:req.body.email,UserName:req.body.uname,Password:passE,BookedTickets:""},(err,result)=>{
+                         if(err) throw err;
+                         res.send({'value':'registered'})
+                         })
+                    }
+                    else{
+                         res.send({'value':'EmailAlready'})
+                    }
+               })
+               }
              
              else{
-                 res.send({'value':'already'})
+                 res.send({'value':'UsernameAlready'})
              }
 
             
@@ -223,9 +232,10 @@ app.post('/signIn',(req,res)=>{
 })
 
 app.post('/bookingHistory',(req,res)=>{
-     mongoClient.connect(mongoUrl,(err,db)=>{
+     
+     mongoClient.connect(mdkey,(err,db)=>{
           if(err) throw err;
-          var dbo=db.db('MyProject');
+          var dbo=db.db('movieOn');
           dbo.collection('UserInfo').findOne({UserName:req.body.uname},(err,result)=>{
                if(err) throw err;  
     
@@ -234,12 +244,13 @@ app.post('/bookingHistory',(req,res)=>{
                     res.send({'status':'none'}) 
                }
                else{
-                    dbo.collection('BookingHistory').findOne({UserName:req.body.uname},(err,val)=>{
+                    dbo.collection('BookingHistory').find({UserName:req.body.uname}).toArray((err,val)=>{
                     
                     if(err) throw err;
                     
                     else{
-                         res.send(val)
+                         res.send(val[val.length-1])
+                         // res.send(val)
                    }
                    })
      }
@@ -260,9 +271,9 @@ app.post('/bookingHistory',(req,res)=>{
 
 
 app.post('/delete',(req,res)=>{
-  mongoClient.connect(mongoUrl,(err,db)=>{
+  mongoClient.connect(mdkey,(err,db)=>{
        if(err) throw err;
-       var dbo=db.db('MyProject');
+       var dbo=db.db('movieOn');
        dbo.collection('UserInfo').deleteOne({UserName:req.body.DUser},(err,result)=>{
             if(err) throw err;
 
@@ -285,9 +296,9 @@ app.post('/verifyToken',(req,res)=>{
 
 app.post('/forgot',(req,res)=>{
      var PassE=crypto.SHA256(req.body.passwordS+myKey).toString()
-     mongoClient.connect(mongoUrl,(err,db)=>{
+     mongoClient.connect(mdkey,(err,db)=>{
           if(err) throw err;
-          var dbo=db.db('MyProject');
+          var dbo=db.db('movieOn');
           dbo.collection('UserInfo').findOne({UserName:req.body.uname},(err,result)=>{
 
 
@@ -312,7 +323,19 @@ app.post('/forgot',(req,res)=>{
 })
 
 app.post('/sendList',(req,res)=>{
-  res.send({'Name': movies})
+     mongoClient.connect(mdkey,(err,db)=>{
+          if(err) throw err;
+          var dbo=db.db('movieOn');
+          dbo.collection('MovieName').findOne({},(err,result)=>{
+          if(err) throw err;
+          //console.log(result.mName)
+          res.send({'Name': result.mName})        
+          })
+                    
+     })
+     
+  
+    
 })
 
 

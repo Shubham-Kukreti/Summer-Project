@@ -21,12 +21,17 @@ constructor(){
     else{
         axios.post('http://localhost:8080/http://localhost:6000/signup',{'firstN':fName,'lastN':lName,'email':mailE,'uname':uName,'passwordS':pass,'CpasswordS':cpassW})
         .then((res)=>{
-            if(res.data.value=="already"){
-                alert("You are already registered")
+            if(res.data.value=="EmailAlready"){
+                alert("You email is already registered!")
+            }
+
+            else if(res.data.value=="UsernameAlready"){
+                alert("Username not available!")
             }
             
             else if(res.data.value=="registered"){
-               alert("Succesfully Signed Up. \n Now you can SignIn Using Your Credentials.")
+               alert("Succesfully Signed Up! \nNow you can SignIn Using Your Credentials.")
+               window.location.reload()
             }
         })
         .catch()  

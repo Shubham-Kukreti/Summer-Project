@@ -9,6 +9,7 @@ class MiddleLeft extends Component {
     this.list=()=>{
       axios.post('http://localhost:8080/http://localhost:6000/sendList')
         .then((result)=>{
+          console.log(result)
           for(var i=0;;i++){
           if(result.data.Name[i]==undefined){
             break;}

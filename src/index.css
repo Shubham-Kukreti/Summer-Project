@@ -281,8 +281,8 @@ text-shadow:
 
 #movieList li{
   font-family: fantasy;
-  margin:1rem;
-  font-size: 1.1rem;
+  margin:1.3rem;
+  font-size: 1.2rem;
   cursor:pointer;
   border-bottom:1px black solid;
   height:8%;
@@ -414,27 +414,43 @@ text-shadow:
  display: none;
   left: 32%;
   top:8%;
-  height:65vh;
+  height:0;
   width:50vw;
   border:2px black solid;
   border-radius:3%;
+  transition:1s;
   background:url(./Images/bg.jpg);
  
 }
 
  #booking{
   display:grid;
-  grid-template-rows:5% 10% 70% 15%;
+  grid-template-rows:5% 10% 85% ;
   text-align: center;
 }
  #bInputs{
   margin:0.5rem;
 }
 
+#bInputs p{
+  font-weight: bold;
+}
+
+
 #bInputs input[type="text"],#bInputs select{
   border-radius:1rem;
   width:6rem;
   border:none;
+  text-align: center;
+}
+
+#bInputs td{
+  height:20%;
+  width:50%;
+}
+
+#bInputs tr{
+  width:100%;
 }
 
 #bookingContent{
@@ -450,24 +466,32 @@ text-shadow:
   height:2rem;
 }
 
-#bInputs p{
+#check{
+  margin:0;
+  height:100%;
+  width:50%;
+  margin-top:2%;
+  background: linear-gradient(to left,#2B353F,#475462);
+  border-radius: 50%;
+  font-size:1rem;
+  border:none;
   font-weight: bold;
 }
 
-
 #cBook{
-  margin-top:0.5rem;
-  justify-self: center;
-  /* height:20%;
-  width:100%; */
+  height:100%;
+  width:50%;
+  margin-top:2%;
   background: linear-gradient(to right,#2B353F,#475462);
   border-radius: 50%;
+  display: none;
+  border:none;
 }
 
-#cBook:hover{
+#check:hover,#cBook:hover{
   color:white;
+  border:2px white solid;
 }
-
 
 #seats{
   height:20rem;
@@ -925,10 +949,14 @@ label,.aSignUp{
 }
 
 #Booking{
-  height:100vh;
+  height:0;
   width:100vw;
-  top:0;
+  top:10vh;
   left:0;
+}
+
+#check{
+  height:4rem;
 }
 
 #seats{
@@ -998,6 +1026,11 @@ label,.aSignUp{
   font-size:1.2rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+#menubar2 h4{
+  color:white;
+}
+
 
 #menuSearch{
   text-align: center;
