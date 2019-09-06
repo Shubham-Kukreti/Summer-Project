@@ -262,9 +262,11 @@ text-shadow:
   cursor:text;
 }
 
+
 .mList button[type="button"]:hover{
   color:#0050BA;
 }
+
 
 .movieListDiv{
   text-align:center;
@@ -273,11 +275,13 @@ text-shadow:
 
 }
 
+
 .movieListDiv ul{
   margin:auto;
   list-style-image: url('./Images/film1.png');
   height:70%;
 }
+
 
 #movieList li{
   font-family: fantasy;
@@ -287,6 +291,7 @@ text-shadow:
   border-bottom:1px black solid;
   height:8%;
 }
+
 
 #middle{
   height:150vh;
@@ -304,21 +309,59 @@ text-shadow:
   height:100%;
 } */
 
+.slidingImg{
+  top:15%;
+}
 
 
 .sliding{
   height:60vh;
-  width:70vw;
+  width:65vw;
   position: relative;
-  top:15%;
+  top:10%;
   border-radius: 10px;
   border:3px #6B3084 solid;
 }
 
+
 .sliding img{
   height:60vh;
-  width:70vw;
+  width:65vw;
   border-radius: 7px;
+}
+
+
+.slidingImg a{
+  top:60%;
+}
+
+
+
+.slidingImg h1{
+  color:red;
+  margin:auto;
+  font-weight: bold;
+  font-size:4rem;
+  margin-top:1.5rem;
+  animation: borderChange 1s infinite;
+}
+
+/* @keyframes color-change {
+  0% { color: red; }
+  25% { color: blue; }
+  50% {color:pink;}
+  100% { color: red; }
+} */
+
+@keyframes borderChange{
+  0% {text-shadow: none;}
+
+  50% {text-shadow:
+    -1px -1px 0 rgb(233, 66, 90),  
+    1px -1px 0 rgb(233, 66, 66),
+    -1px 1px 0 rgb(233, 66, 66),
+      1px 1px 0 rgb(233, 66, 66);}
+  100% {text-shadow: none;}
 }
 
 #images{
@@ -382,13 +425,20 @@ text-shadow:
 }
 
 #mInfo2{
-  margin:2rem;
+  margin:auto;
   width:100%;
 }
 
 #mInfo2 p{
-  margin-top:0%;
-  font-weight:480;
+  margin-top:2%;
+  font-weight:500;
+  font-size:1.2rem;
+}
+
+#mInfo2 h3{
+  text-decoration: underline;
+  font-size:2rem;
+
 }
 
 #bookButton{
@@ -495,7 +545,7 @@ text-shadow:
 
 #seats{
   height:20rem;
-  width:90%;
+  width:100%;
   transition: 0.25s linear;
   margin-left:0;
 }
@@ -866,22 +916,27 @@ label,.aSignUp{
 }
 
 .sliding{
-  top:0;
+  top:1%;
   /* left:2.5vw; */
   width:95vw;
-  height:50vh;
+  height:45vh;
   
 }
 
 .slidingImg{
-  height:80vh;
+  height:45vh;
   width:95vw;
   text-align:center;
   margin:auto;
+  top:1%;
+}
+
+.slidingImg a{
+  top:60%;
 }
 
 .sliding img{
-  height:50vh;
+  height:45vh;
   width:95vw;
 }
 
@@ -889,6 +944,7 @@ label,.aSignUp{
 
 .slidingImg h1{
   font-size:2rem;
+  margin:none;
 }
 
 
@@ -974,6 +1030,10 @@ label,.aSignUp{
 
 #footer{
   height:10vh;
+}
+
+#F_title{
+  margin:auto;
 }
 
 #headerHeading{

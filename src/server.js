@@ -159,7 +159,7 @@ app.post('/checkSeat',(req,res)=>{
      mongoClient.connect(mdkey,(err,db)=>{
           if(err) throw err;
           var dbo=db.db('movieOn');
-          dbo.collection('BookingHistory').findOne({SeatNo:req.body.seat},(err,result)=>{
+          dbo.collection('BookingHistory').findOne({SeatNo:req.body.seat,ShowTime:req.body.sTime,Movie:req.body.mName},(err,result)=>{
           if(err) throw error
           else if(result==null)
           res.send({'status':'sAvailable'})

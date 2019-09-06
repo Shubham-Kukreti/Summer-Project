@@ -15,7 +15,7 @@ class Footer extends Component {
            <img class="image" src={require('./Images/fb.png')}/>
            <img class="image" src={require('./Images/insta.png')} />
            <img class="image" src={require('./Images/tweet.jpg')}/>
-           <img class="image" src={require('./Images/linked2.png')} />
+           <a href="https://www.linkedin.com/in/shubham-kukreti-900608149"><img class="image" src={require('./Images/linked2.png')} /></a>
             
 
          </div>

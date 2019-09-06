@@ -200,7 +200,7 @@ document.addEventListener("click",(e)=>{
     else if(e.target.id=="check"){
      var x=document.getElementById("movieTime").value;
      var t=document.getElementById("nTicket").value;
-     if(t.length>2 || t==""){
+     if(t.length>3 || t==""){
          alert("Enter a valid Seat number")
      }
 
@@ -235,7 +235,7 @@ document.addEventListener("click",(e)=>{
         // })
         // .catch()
 
-        axios.post('http://localhost:8080/http://localhost:6000/checkSeat',{seat:t})
+        axios.post('http://localhost:8080/http://localhost:6000/checkSeat',{'seat':t,'sTime':x,'mName':localStorage.getItem('movieName')})
         .then((res)=>{
             if(res.data.status=="notAvailable")
                 alert("Selected Seat is already Booked!\n Please select another seat.")
@@ -255,8 +255,9 @@ document.addEventListener("click",(e)=>{
         var t=document.getElementById("nTicket").value; 
         var today= new Date();
         var tDate=today.toString()
-        var p=Math.random();
-        var pc=parseInt(p*600);
+        var p=Math.random()*100;
+        var pc=parseInt(p*6);
+        //var v=0;
         axios.post('http://localhost:8080/http://localhost:6000/booked',{'UserName':localStorage.getItem('userName'),'mName':localStorage.getItem('movieName'),'sTime':x,'Seat':t,'amount':pc,'btime':tDate})
         .then((result)=>{
             if(result.data.status=="already"){
@@ -264,17 +265,20 @@ document.addEventListener("click",(e)=>{
             }
             else{
             
-            var v=prompt("Your ticket cost is "+ pc + "\nPlease Enter Your Credit Card Number.")
-            if(v.length<19 || v=="" || v.length>19)
+          var v=prompt("Your ticket cost is "+ pc + "\nPlease Enter Your Credit Card Number.")
+            if(v==null)
             {
                 alert("Enter a valid Credit Card")
             }
-            
+            else if(v.length<19 || v.length>19){
+                alert("Enter a valid Credit Card")
+            }
+            else{
             if(result.data.status=="booked"){
                 alert("Your Ticket is successfully booked.\n Enjoy the Show!")
                 document.getElementById('Booking').style.display="none";
                 document.getElementById('transparentBack').style.display="none";
-           
+            }
         
         
         }
