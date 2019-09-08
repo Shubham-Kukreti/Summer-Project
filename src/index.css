@@ -105,6 +105,7 @@ body {
  .App{
   margin:0;
   padding:0;
+  z-index:2;
 }
 
 code {
@@ -210,7 +211,7 @@ text-shadow:
   -1px -1px 0 rgb(233, 66, 66),  
   1px -1px 0 rgb(233, 66, 66),
   -1px 1px 0 rgb(233, 66, 66),
-    1px 1px 0 rgb(233, 66, 66);
+  1px 1px 0 rgb(233, 66, 66);
 }
 
 
@@ -237,8 +238,8 @@ text-shadow:
   width:100%;
   display:grid;
   grid-template-rows: 8% 92%;
-
 }
+
 
 .mList{
   height:100%;
@@ -250,16 +251,19 @@ text-shadow:
   width:100%;
   height:100%;
 } */
+
+
 .mList button[type="button"]{
   width:100%;
   background:none;
-  font-size:1.2rem;
+  font-size:1.7rem;
   font-weight: bold;
+  font-stretch: extra-expanded;
+  font-family: fantasy;
   border-radius:3px;
   height:100%;
   border-bottom:2px #58585A solid;
-  font-style: italic;
-  cursor:text;
+  font-style:italic;
 }
 
 
@@ -272,7 +276,6 @@ text-shadow:
   text-align:center;
   height:100%;
   width:100%;
-
 }
 
 
@@ -310,7 +313,8 @@ text-shadow:
 } */
 
 .slidingImg{
-  top:15%;
+  top:6%;
+  width:65vw;
 }
 
 
@@ -318,7 +322,7 @@ text-shadow:
   height:60vh;
   width:65vw;
   position: relative;
-  top:10%;
+  top:6%;
   border-radius: 10px;
   border:3px #6B3084 solid;
 }
@@ -411,7 +415,6 @@ text-shadow:
   margin-top:1rem;
   display:grid;
   grid-auto-rows: 20% 40% 40%;
-
 }
 
 
@@ -421,13 +424,14 @@ text-shadow:
   grid-template-columns: 50% auto;
   margin-left:1%;
   margin-top:1.8%;
-
 }
+
 
 #mInfo2{
   margin:auto;
   width:100%;
 }
+
 
 #mInfo2 p{
   margin-top:2%;
@@ -435,11 +439,12 @@ text-shadow:
   font-size:1.2rem;
 }
 
+
 #mInfo2 h3{
   text-decoration: underline;
   font-size:2rem;
-
 }
+
 
 #bookButton{
   margin:auto;
@@ -461,7 +466,7 @@ text-shadow:
 
 #Booking{
   position: fixed;
- display: none;
+  display: none;
   left: 32%;
   top:8%;
   height:0;
@@ -470,15 +475,16 @@ text-shadow:
   border-radius:3%;
   transition:1s;
   background:url(./Images/bg.jpg);
- 
-}
+ }
 
  #booking{
   display:grid;
   grid-template-rows:5% 10% 85% ;
   text-align: center;
 }
- #bInputs{
+ 
+
+#bInputs{
   margin:0.5rem;
 }
 
@@ -494,14 +500,17 @@ text-shadow:
   text-align: center;
 }
 
+
 #bInputs td{
   height:20%;
   width:50%;
 }
 
+
 #bInputs tr{
   width:100%;
 }
+
 
 #bookingContent{
   display:grid;
@@ -538,6 +547,7 @@ text-shadow:
   border:none;
 }
 
+
 #check:hover,#cBook:hover{
   color:white;
   border:2px white solid;
@@ -550,6 +560,7 @@ text-shadow:
   margin-left:0;
 }
 
+
 #bookingCross{
   float:right;
   height:2rem;
@@ -557,9 +568,11 @@ text-shadow:
   cursor:pointer;
 }
 
+
 #historyContent td{
   margin:5px;
 }
+
 
 #menuBar{
   height:80%;
@@ -573,8 +586,8 @@ text-shadow:
   top:5rem;
   transition:1s;
   z-index: 2;
-
 }
+
 
 #menuBar h2{
   color:#18111A;
@@ -583,10 +596,12 @@ text-shadow:
 }
 
 
+
 #menuList{
   padding:0.6rem;
   margin:0;
 }
+
 
 #menuList li{
   border-bottom:1px black solid;
@@ -597,6 +612,8 @@ text-shadow:
   cursor: pointer;
 
 }
+
+
 #menuList li:hover{
   font-size: 1.45rem;
   font-weight: bold;
@@ -613,11 +630,13 @@ text-shadow:
   animation:rotate 0.8s linear;
 }
 
+
 @keyframes rotate{
   from {transform:rotate(-180deg);}
 
   to {transform:rotate(0deg);}
 }
+
 
 #menubar2{
   display:none;
@@ -642,6 +661,8 @@ text-shadow:
   display:none;
 }
 
+
+
 #Sign{
   /* background: linear-gradient(to right,#0f8,#0f0); */
   background:url(./Images/bg.jpg);
@@ -656,26 +677,30 @@ text-shadow:
   width:35%;
   text-align: center;
   transition:0.5s;
-
 }
+
 
 #Sign p{
   font-weight: bolder;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
 #forgotPass{
   font-weight: bold;
   cursor:pointer;
 }
 
+
 #forgotPass:hover{
   color:#00303F;
 }
 
+
 #fPassTable tr{
  margin:1rem;
 }
+
 
 .CrossLS{
   height:2rem;
@@ -683,6 +708,7 @@ text-shadow:
   cursor:pointer;
   float:right;
 }
+
 
 #Sign input[type="text"], #Sign input[type="password"],#Sign input[type="email"]{
   border-radius: 1.5rem;;
@@ -704,6 +730,7 @@ text-shadow:
    border:2px solid blue;
 }
 
+
 #Sign button[type="button"],#Sign button[type="reset"]{
   border-radius:2rem;
   width:6rem;
@@ -713,6 +740,7 @@ text-shadow:
   color:#00303F;
   font-weight: bold;
 }
+
 
 #bSignup,#bSignIn,#BSignIn,#sButton{
   border-radius:2rem;
@@ -729,15 +757,19 @@ text-shadow:
   height:2.6rem;
 }
 
+
 td{
   margin:0.5rem;
   text-align: center;
   width:30%;
 }
 
+
 .lTable{
   height:60%;
 }
+
+
 
 label,.aSignUp{
   text-align: center;
@@ -746,6 +778,7 @@ label,.aSignUp{
   font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
+
 
 #footer{
   display:grid;
@@ -756,14 +789,15 @@ label,.aSignUp{
   border:2px solid #9e363a;
 }
 
+
 #F_title{
   margin:auto;
   color:whitesmoke;
   font-family: cursive;
   font-weight: bolder;
   cursor: pointer;
-
 }
+
 
 #conText{
   margin:auto;
@@ -772,13 +806,16 @@ label,.aSignUp{
   font-size:1.2rem;
 }
 
+
 #footerMid{
   margin:0;
 }
  
+
 #imageDiv{
   margin:auto;
 }
+
 
 .image{
   height:1.6rem;
@@ -790,6 +827,7 @@ label,.aSignUp{
   transition:height 0.25s;
   transition:width 0.25s;
 }
+
 
 .image:hover{
   border:1.5px solid blue;
@@ -862,21 +900,26 @@ label,.aSignUp{
   
 }
 
+
 #welcome{
   display:none;
 }
+
 
 #headerSearchBar{
   display:none;
 }
 
+
 #headerSearchButton{
   display:none;
 }
 
+
 #headerHeading{
   font-size:1.8rem;
 }
+
 
 #headerSignIn{
   display:none;
@@ -887,6 +930,7 @@ label,.aSignUp{
   grid-template-columns: 0% 100% ;
   height:80vh;
 }
+
 
 #list{
   display:block;
@@ -905,9 +949,11 @@ label,.aSignUp{
   display:none;
 }
 
+
 .movieListDiv ul{
   height:90%;
 }
+
 
 #middle{
   height:80vh;
@@ -915,13 +961,14 @@ label,.aSignUp{
   overflow-y:scroll;
 }
 
+
 .sliding{
-  top:1%;
+  top:1.5%;
   /* left:2.5vw; */
   width:95vw;
   height:45vh;
-  
 }
+
 
 .slidingImg{
   height:45vh;
@@ -931,15 +978,16 @@ label,.aSignUp{
   top:1%;
 }
 
+
 .slidingImg a{
   top:60%;
 }
+
 
 .sliding img{
   height:45vh;
   width:95vw;
 }
-
 
 
 .slidingImg h1{
@@ -957,11 +1005,12 @@ label,.aSignUp{
 #images p{
   float:left;
   margin-left:2.1%;
-  margin:1.7%;
+  margin:2.5%;
   margin-top:2.9%;
   font-size:0.8rem;
   font-weight: bold;
 }
+
 
 #certiButton{
   height:1.6rem;
@@ -975,27 +1024,36 @@ label,.aSignUp{
   font-weight: bold;
 }
 
+
 #info{
   grid-template-rows:11% 78% 11%;
 }
+
 
 #mInfo1{
   margin-left: 0;
   width:100%;
 }
 
+
 #mInfo1 h3{
   font-size: 0.7rem;
   font-weight:bold;
 }
 
+
 #mInfo2{
   margin:auto;
+}
+
+#mInfo2 p{
+  font-size:1rem;
 }
 
 .movieListDiv{
   height:80vh;
 }
+
 
 #bookButton{
   height:100%;
@@ -1004,6 +1062,7 @@ label,.aSignUp{
   border-radius:45%;
 }
 
+
 #Booking{
   height:0;
   width:100vw;
@@ -1011,34 +1070,42 @@ label,.aSignUp{
   left:0;
 }
 
+
 #check{
   height:4rem;
 }
+
 
 #seats{
   display:none;
 }
 
+
 #bookingContent{
   grid-template-columns: 100%;
 }
+
 
 #header{
   grid-template-columns: 50% auto;
   height:10vh;
 }
 
+
 #footer{
   height:10vh;
 }
 
+
 #F_title{
-  margin:auto;
+  margin-left:10px;
 }
+
 
 #headerHeading{
   margin-left:10px;
 }
+
 
 #headerMenuImg{
   display:none;
@@ -1049,7 +1116,9 @@ label,.aSignUp{
   display:block;
   height:2.2rem;
   width:2.5rem;
-  margin:auto;
+  margin-left:auto;
+  margin-top:12.5px;
+  margin-bottom:12.5px;
   margin-right: 10px;
 
 }
@@ -1061,6 +1130,7 @@ label,.aSignUp{
   margin-top:0.1rem;
 }
 
+
 #menubar2{
   width:98.5vw;
   text-align: center;
@@ -1068,11 +1138,12 @@ label,.aSignUp{
   position:fixed;
   background:url('./Images/mBack.png');
   background-size: cover;
-  top:10vh;
+  top:10.2vh;
   display:none;
   transition:0.5s;
   border:2px white solid;
   z-index: 2;
+  margin:0;
 }
 
 #menubar2 button[type="button"]{
@@ -1097,6 +1168,8 @@ label,.aSignUp{
   border-radius:10px;
   border:1px black solid;
 }
+
+
 #mAfterLogin{
   margin:auto;
 }

@@ -14,6 +14,7 @@ ReactDOM.render(<App />, document.getElementById('root'));
 var i=0
 var j=0
 var l=0
+var k=0
 document.addEventListener("click",(e)=>{
 
     if(e.target.id=="headerSignIn"){
@@ -192,7 +193,7 @@ document.addEventListener("click",(e)=>{
         document.getElementById("transparentBack").style.display="none";
         ReactDOM.unmountComponentAtNode(document.getElementById("Booking"),<Booking />)
         document.getElementById("Booking").style.height="0";
-        setTimeout(()=>{document.getElementById("Booking").style.display="none"},1000);    
+        setTimeout(()=>{document.getElementById("Booking").style.display="none"},1000);  
         
 
         }
@@ -347,6 +348,51 @@ document.addEventListener("click",(e)=>{
         document.getElementById("middle").style.display="grid";
 
 
+    }
+
+    else if(e.target.id=="tMovies"){
+        //document.getElementById("tMovies")
+        if(k==0)
+        {   document.getElementById("tMovies").innerHTML="<< Latest Movies";
+            document.getElementById("movieList").innerHTML=`<img src="${require('./Images/loading2.gif')}"/>`;
+            
+            axios.post('http://localhost:8080/http://localhost:6000/sendList')
+            .then((result)=>{
+                document.getElementById('movieList').innerHTML="";
+            for(var i=0;;i++){
+            if(result.data.Name[i]==undefined){
+                break;}
+            else{
+                if(result.data.Name[i][1]=="latest")  
+                document.getElementById("movieList").insertAdjacentHTML('beforeend',`
+                <li class="MvList" id="MovieList">${result.data.Name[i][0]}</li>
+                `)
+                }
+            }
+        })
+        .catch()
+        k++;
+        }
+
+        else if(k==1){
+            document.getElementById("tMovies").innerHTML="Trending Searches >>";
+            document.getElementById("movieList").innerHTML=`<img src="${require('./Images/loading2.gif')}"/>`
+            axios.post('http://localhost:8080/http://localhost:6000/sendList')
+            .then((result)=>{
+                document.getElementById("movieList").innerHTML="";
+            for(var i=0;;i++){
+            if(result.data.Name[i]==undefined){
+                break;}
+            else{ 
+                document.getElementById("movieList").insertAdjacentHTML('beforeend',`
+                <li class="MvList" id="MovieList">${result.data.Name[i][0]}</li>
+                `)
+                }
+            }
+        })
+        .catch()  
+        k--; 
+        }
     }
     
 })

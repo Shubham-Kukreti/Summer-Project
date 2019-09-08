@@ -8,7 +8,7 @@ let mongoClient=require('mongodb').MongoClient;
 
 var io=socketIO(server);
 
-var movies=['Mission Mangal','Batla House','Saaho','Kabir Singh','Once Upon A Time In Hollywood','Fast & Furious: Hobbs & Shaw','The Angry Birds Movie 2']
+var movies=[['Mission Mangal','latest'],['Batla House','latest'],['Saaho','latest'],['Kabir Singh',""],['Once Upon A Time In Hollywood','latest'],['Fast & Furious: Hobbs & Shaw',''],['The Angry Birds Movie 2','latest']]
 
 var mdkey="mongodb+srv://shubham2:shubham98@cluster0-jlphs.mongodb.net/test?retryWrites=true&w=majority";
 
@@ -108,15 +108,15 @@ const myKey="ticket";
 
 // }
 
-// mongoClient.connect(mdkey,(err,db)=>{
-//      if(err) throw err;
-//      var dbo=db.db('movieOn');
-//      dbo.collection('MovieName').insertOne({mName:movies},(err,result)=>{
-//      if(err) throw err;
+mongoClient.connect(mdkey,(err,db)=>{
+     if(err) throw err;
+     var dbo=db.db('movieOn');
+     dbo.collection('MovieName').insertOne({mName:movies},(err,result)=>{
+     if(err) throw err;
                
-//      })
+     })
                
-// })
+})
           
          
 app.post('/sendData',(req,res)=>{
@@ -337,6 +337,10 @@ app.post('/sendList',(req,res)=>{
   
     
 })
+
+// app.post('/sendList',(req,res)=>{
+//      res.send({'Name': movies}) 
+// })
 
 
 
