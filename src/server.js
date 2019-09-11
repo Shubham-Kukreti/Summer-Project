@@ -8,7 +8,7 @@ let mongoClient=require('mongodb').MongoClient;
 
 var io=socketIO(server);
 
-var movies=[['Mission Mangal','latest'],['Batla House','latest'],['Saaho','latest'],['Kabir Singh',""],['Once Upon A Time In Hollywood','latest'],['Fast & Furious: Hobbs & Shaw',''],['The Angry Birds Movie 2','latest']]
+//var movies=[['Chhichhore','latest'],['IT: Chapter Two','latest'],['Mission Mangal','latest'],['Batla House','latest'],['Saaho','latest'],['Kabir Singh',""],['Once Upon A Time In Hollywood','latest'],['Fast & Furious: Hobbs & Shaw',''],['The Angry Birds Movie 2','latest']]
 
 var mdkey="mongodb+srv://shubham2:shubham98@cluster0-jlphs.mongodb.net/test?retryWrites=true&w=majority";
 
@@ -96,7 +96,7 @@ const myKey="ticket";
 //      'The Angry Birds Movie 2':{
 //           'synopsis':`The epic battle between the grumpy bunch of flightless birds and the crafty green pigs reaches the next level in this sequel to the hit 2016 film.`,
 //           'duration':'1 hrs 36 mins',
-//           'releasing':' 23 Aug, 2019',
+//           'releasing':'23 Aug, 2019',
 //           'rating':'75%',
 //           'type':'Animation,Comedy',
 //           'certi':'U',
@@ -104,19 +104,55 @@ const myKey="ticket";
 //           'imgUrl':'http://genknews.genkcdn.vn/thumb_w/640/2019/6/21/anh-1-1561096560686519836335.jpg'
 //      },
 
+//      'IT: Chapter Two':{
+//           'synopsis':`The film is Muschietti's follow-up to 2017's critically acclaimed and massive worldwide box office hit "IT", which grossed over $700 million globally. Both redefining and transcending the genre, "IT" became part of the cultural zeitgeist as well as the highest-grossing horror film of all time.
+
+//           Because every 27 years evil revisits the town of Derry, Maine, It: Chapter 2 brings the characters who have long since gone their separate ways, back together as adults, nearly three decades after the events of the first film.`,
+//           'duration':'2 hrs 50 mins',
+//           'releasing':'06 Sep, 2019',
+//           'rating':'74%',
+//           'type':'Horror',
+//           'certi':'A',
+//           'lang':'English,Hindi,Telugu,Tamil',
+//           'imgUrl':'https://bloody-disgusting.com/wp-content/uploads/2019/07/it-ends.png'
+//      },
+
+//      'Chhichhore':{
+//           'synopsis':`Chhichhore takes you on an exuberant and hilarious journey through college life where you meet a bunch of interesting 'losers': Anni, Maya, Sexa, Derek, Mummy, Acid, and Bevda. They as a group go through a seamless transition from past to present and end up at a reunion they could never have thought of.`,
+//           'duration':'2 hrs 26 mins',
+//           'releasing':'06 Sep, 2019',
+//           'rating':'89%',
+//           'type':'Comedy,Drama,Romantic',
+//           'certi':'UA',
+//           'lang':'Hindi',
+//           'imgUrl':'https://1.bp.blogspot.com/-idlFtuVZDNE/XWhpWLWncCI/AAAAAAAAAXQ/dwy5vTwyl-QpbD1dQ9wlzYAhF9Eg6NAigCLcBGAs/s1600/Chhichhore%2BFull%2BHD%2BMovie%2BDownload%2B720p.jpg'
+
+//      }
+
 
 
 // }
 
-mongoClient.connect(mdkey,(err,db)=>{
-     if(err) throw err;
-     var dbo=db.db('movieOn');
-     dbo.collection('MovieName').insertOne({mName:movies},(err,result)=>{
-     if(err) throw err;
+// mongoClient.connect(mdkey,(err,db)=>{
+//      if(err) throw err;
+//      var dbo=db.db('movieOn');
+//      dbo.collection('MovieName').insertOne({mName:movies},(err,result)=>{
+//      if(err) throw err;
                
-     })
+//      })
                
-})
+// })
+
+// mongoClient.connect(mdkey,(err,db)=>{
+//      if(err) throw err;
+//      var dbo=db.db('movieOn');
+//      dbo.collection('movieData').insertOne({Mdata:movieData},(err,result)=>{
+//      if(err) throw err;
+               
+//      })
+               
+// })
+
           
          
 app.post('/sendData',(req,res)=>{

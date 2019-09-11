@@ -6,7 +6,10 @@ class Footer extends Component {
   return (
       <div id="footer">
          <h3 id="F_title">MovieOn</h3>
-         <div id="footerMid"></div>
+         <div id="footerMid">
+           
+            
+         </div>
         <center>
         
          <div id="imageDiv">
