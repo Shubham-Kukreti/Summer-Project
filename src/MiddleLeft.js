@@ -32,7 +32,7 @@ class MiddleLeft extends Component {
   
   componentDidMount(){
     this.list();
-}
+  }
 
   
   
