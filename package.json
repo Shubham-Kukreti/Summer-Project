@@ -8,6 +8,7 @@
     "cors-anywhere": "^0.4.1",
     "crypto-js": "^3.1.9-1",
     "express": "^4.17.1",
+    "jshint": "^2.10.2",
     "mongodb": "^3.3.0-beta2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
