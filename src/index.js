@@ -394,7 +394,28 @@ document.addEventListener("click",(e)=>{
         k--; 
         }
     }
+
+    else if(e.target.id=="headerSearchButton"){
+        
+        var x=document.getElementById("headerSearchBar").value;
+
+        axios.post('http://localhost:8080/http://localhost:6000/search',{'mName':x})
+        .then((result)=>{
     
+            if(result.data.status=="notFound")
+            alert("Not Available!");
+
+            else if(result.data.status=="found"){
+            alert("Available!\nCheckout in Movielist")
+            }
+    
+
+    })
+    .catch()
+    
+    }  
+    
+        
 })
 
 

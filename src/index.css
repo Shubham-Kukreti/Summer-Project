@@ -158,7 +158,11 @@ text-shadow:
   border:none;
 }
 
-#headerSearchBar:hover,#headerSearchBar:focus,#headerSearchButton:hover{
+#headerSearchBar:focus,#headerSearchBar:hover{
+  border:2px #83D0F6 solid; 
+}
+
+#headerSearchButton:hover{
   border:2px #83D0F6 solid;
   color:white;
 }

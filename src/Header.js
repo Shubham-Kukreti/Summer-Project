@@ -66,7 +66,7 @@ class Header extends Component {
         <div id="menubar2">
       
     
-         <input type="text" placeholder="SearchHere" id="menuSearch"></input>
+         <p><input type="text" placeholder="SearchHere" id="menuSearch"></input ></p>
          <button id="home2" type="button">Home</button>
          <button id="menuSignIn" type="button">Sign In</button>
          

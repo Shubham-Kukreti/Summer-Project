@@ -1,12 +1,10 @@
 const express  = require('express');
 const app = express();
 const server  = require('http').createServer(app);
-const socketIO=require('socket.io');
 let bodyParser = require('body-parser');
 let crypto = require('crypto-js');
 let mongoClient=require('mongodb').MongoClient;
 
-var io=socketIO(server);
 
 //var movies=[['Chhichhore','latest'],['IT: Chapter Two','latest'],['Mission Mangal','latest'],['Batla House','latest'],['Saaho','latest'],['Kabir Singh',""],['Once Upon A Time In Hollywood','latest'],['Fast & Furious: Hobbs & Shaw',''],['The Angry Birds Movie 2','latest']]
 
@@ -153,9 +151,32 @@ const myKey="ticket";
                
 // })
 
-          
+//  app.post('/searchMovie',(req,res)=>{
+//      mongoClient.connect(mdkey,(err,db)=>{
+//           if(err) throw err;
+//           var dbo=db.db('movieOn');
+//           dbo.collection('MovieName').findOne({mName[0]:req.body.mName},(err,result)=>{
+//           if(err) throw err;
+
+//           else if(result==null){
+//                res.send({'status':'notFound'})
+//           }
+//           else{
+//                req.send({'status':'found'})
+//           }
+                    
+//           })
+                    
+//      })
+     
+//  })         
          
-app.post('/sendData',(req,res)=>{
+
+
+
+
+
+ app.post('/sendData',(req,res)=>{
      mongoClient.connect(mdkey,(err,db)=>{
           if(err) throw err;
           var dbo=db.db('movieOn');
@@ -167,6 +188,39 @@ app.post('/sendData',(req,res)=>{
      
 
 })
+ 
+ 
+
+app.post('/search',(req,res1)=>{
+     var y=0;
+     mongoClient.connect(mdkey,(err,db)=>{
+          if(err) throw err;
+          var dbo=db.db('movieOn');
+          dbo.collection('MovieName').findOne({},(err,result)=>{
+          if(err) throw err;
+           
+          for(var i=0;i<result.mName.length;i++)
+          {
+             if(result.mName[i][0]==req.body.mName)
+              { 
+                 y=1;
+              }
+
+          }
+          
+          if(y==1)
+          res1.send({'status':'found'})
+          else{                
+          res1.send({'status':'notFound'})
+          }
+               
+          
+                 
+          })
+
+     })
+})
+
 
 app.post('/booked',(req,res)=>{
      var d=new Date().getDate();
@@ -358,21 +412,6 @@ app.post('/forgot',(req,res)=>{
      })   
 })
 
-app.post('/sendList',(req,res)=>{
-     mongoClient.connect(mdkey,(err,db)=>{
-          if(err) throw err;
-          var dbo=db.db('movieOn');
-          dbo.collection('MovieName').findOne({},(err,result)=>{
-          if(err) throw err;
-          //console.log(result.mName)
-          res.send({'Name': result.mName})        
-          })
-                    
-     })
-     
-  
-    
-})
 
 // app.post('/sendList',(req,res)=>{
 //      res.send({'Name': movies}) 
@@ -385,10 +424,25 @@ app.post('/sendList',(req,res)=>{
 //      res.send({'infoL': Upcoming})
 //    })
    
+app.post('/sendList',(req,res)=>{
+     mongoClient.connect(mdkey,(err,db)=>{
+          if(err) throw err;
+          var dbo=db.db('movieOn');
+          dbo.collection('MovieName').findOne({},(err,result)=>{
+          if(err) throw err;
+          //console.log(result.mName)
+          res.send({'Name': result.mName})        
+          })
+                    
+     })
+     
+})
+
+
 
 
 server.listen(6000,(req,res)=>{
-    console.log("server is listening to port number 6000")
+    console.log("server is listening to port number 6000");
   })
   
   //mongodb+srv://shubham:<password>@cluster0-jlphs.mongodb.net/test?retryWrites=true&w=majority
