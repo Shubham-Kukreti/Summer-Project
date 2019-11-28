@@ -42,7 +42,7 @@ const myKey="ticket";
 //           'type':'Comedy,Drama',
 //           'certi':'UA',
 //           'lang':'Hindi',
-//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwj2ourgrozmAhWKxosBHV2BDu0QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.scrabbl.com%2F-bala-official-trailer-makes-you-rofl-ayushmann-khurrana-strives-with-baldness-in-this-satirical-comedy&psig=AOvVaw1PeuPvNfjiayE_XU63lLRw&ust=1575011830778614'
+//           'imgUrl':'https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/bala_poster_660_231119082629.jpg'
 //      },
 
 //      '21 Bridges':{
@@ -53,7 +53,7 @@ const myKey="ticket";
 //           'type':'Drama,Thriller',
 //           'certi':'A',
 //           'lang':'English',
-//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjCzMGer4zmAhUlL6YKHXxTCdEQjRx6BAgBEAQ&url=https%3A%2F%2Fynuk.tv%2F2019%2F05%2F07%2F21-bridges-trailer%2F&psig=AOvVaw1VvW9QhdMNk6nx7ZsLTPfZ&ust=1575011994601265'
+//           'imgUrl':'http://redcarpetcrash.com/wp-content/uploads/2019/04/21.jpg'
 //      },
 
 //      'Ford V Ferrari': {
@@ -64,7 +64,7 @@ const myKey="ticket";
 //           'type':'Action,Biography,Drama',
 //           'certi':'UA',
 //           'lang':'English',
-//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwi0r_fMr4zmAhUPx4sBHeNuAaYQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.metaflix.com%2Fmovie-news%2F2019%2F6%2F3%2Ffirst-poster-trailer-for-ford-v-ferrari-starring-matt-damon-and-christian-bale&psig=AOvVaw1xqmq6oVw9qrdebhZqR5R-&ust=1575012133053470'
+//           'imgUrl':'https://cdn.collider.com/wp-content/uploads/2019/05/ford-v-ferrari-poster-social.jpg'
 //      },
 
 //      'Pagalpanti':{
@@ -75,7 +75,7 @@ const myKey="ticket";
 //           'type':'Comedy',
 //           'certi':'UA',
 //           'lang':'Hindi',
-//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiXu8D7r4zmAhVDwosBHcTrCYYQjRx6BAgBEAQ&url=https%3A%2F%2Ftimesofindia.indiatimes.com%2Fentertainment%2Fhindi%2Fbollywood%2Fnews%2Fpagalpanti-ahead-of-the-trailer-release-ileana-dcruz-teases-her-fans-with-quirky-new-posters%2Farticleshow%2F71699371.cms&psig=AOvVaw2WSirgVzv8ATbhbIYvn7nh&ust=1575012197039682'
+//           'imgUrl':'http://media1.santabanta.com/full1/Bollywood%20Movies/Pagalpanti/pagalpanti-19a.jpg'
 //      },
 
 //      'Frozen 2':{
@@ -86,7 +86,7 @@ const myKey="ticket";
 //           'type':'Animation,Adventure,Comedy',
 //           'certi':'U',
 //           'lang':'English,Hindi,Tamil,Telugu',
-//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwi5mNbytIzmAhU9x4sBHWsLDBIQjRx6BAgBEAQ&url=https%3A%2F%2Fmovies.disney.com%2Ffrozen-2&psig=AOvVaw2Ygy1JN4ECkBk5bP9Spx9V&ust=1575013554621719'
+//           'imgUrl':'https://i.ytimg.com/vi/vSKlICmmi98/maxresdefault.jpg'
 //      },
 
 //      'Marjaavaan':{
@@ -97,7 +97,7 @@ const myKey="ticket";
 //           'type':'Action,Drama,Romantic',
 //           'certi':'UA',
 //           'lang':'Hindi',
-//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjY_oXDtYzmAhVxGaYKHRSwAiwQjRx6BAgBEAQ&url=https%3A%2F%2Feconomictimes.indiatimes.com%2Fmagazines%2Fpanache%2Fmarjaavaan-review-clichd-narrative-feels-out-of-place-in-the-current-slick-bwood%2Farticleshow%2F72104933.cms&psig=AOvVaw3U23HI8gioHZURHYJqJ5DA&ust=1575013646946328'
+//           'imgUrl':'https://img.etimg.com/thumb/msid-72105017,width-643,imgsize-708172,resizemode-4/there-is-little-logic-or-conviction-in-the-narrative-.jpg'
 //      },
 
 //      'Housefull 4':{
@@ -108,7 +108,7 @@ const myKey="ticket";
 //           'type':'Comedy,Fantasy',
 //           'certi':'UA',
 //           'lang':'Hindi',
-//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiQmev7tYzmAhVSyosBHW4HDUkQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.thestatesman.com%2Fentertainment%2Fhousefull-4-makers-release-another-poster-1502803761.html&psig=AOvVaw1IvDHybadvlEl41SFhHVaR&ust=1575013796865597'
+//           'imgUrl':'https://boxofficeincome.in/wp-content/uploads/2019/09/housefull-4-first-look-out-now-1280x720.jpg'
 //      },
 
 //      'Joker':{
@@ -119,7 +119,7 @@ const myKey="ticket";
 //           'type':'Crime,Fantasy,Thriller',
 //           'certi':'A',
 //           'lang':'English',
-//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjf9LqutozmAhVkIqYKHZDODeEQjRx6BAgBEAQ&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Ffilmspell.com%252Fjoker2019-movie-review-unabashedly-champions-evil%252F%26psig%3DAOvVaw0bjxBsVRCucTIETcl7WKE1%26ust%3D1575013906502771&psig=AOvVaw0bjxBsVRCucTIETcl7WKE1&ust=1575013906502771'
+//           'imgUrl':'https://filmspell.com/wp-content/uploads/2019/10/Joker2019-Movie-HD-Poster-FilmSpell_1-990x556.jpg'
 
 //      }
 
