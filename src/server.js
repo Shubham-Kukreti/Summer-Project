@@ -6,7 +6,7 @@ let crypto = require('crypto-js');
 let mongoClient=require('mongodb').MongoClient;
 
 
-//var movies=[['Chhichhore','latest'],['IT: Chapter Two','latest'],['Mission Mangal','latest'],['Batla House','latest'],['Saaho','latest'],['Kabir Singh',""],['Once Upon A Time In Hollywood','latest'],['Fast & Furious: Hobbs & Shaw',''],['The Angry Birds Movie 2','latest']]
+//var movies=[['21 Bridges','latest'],['Ford V Ferrari','latest'],['Pagalpanti','latest'],['Frozen 2','latest'],['Marjaavaan','latest'],['Joker',""],['Bala','latest'],['Mission Mangal',''],['Housefull 4','']]
 
 var mdkey="mongodb+srv://shubham2:shubham98@cluster0-jlphs.mongodb.net/test?retryWrites=true&w=majority";
 
@@ -34,96 +34,92 @@ const myKey="ticket";
 //            'imgUrl':'https://1.bp.blogspot.com/-uTjHvbo7lpI/XS2DmlrP_dI/AAAAAAAAAO8/T0AUWYCqMUkXC6M_oEMcQaw8rRCmt-ehwCLcBGAs/s640/mission-mangal-movie-poster.jpg'
 //      },
 
-//      'Batla House':{
-//           'synopsis':`Based on the 2008 Delhi Batla House case, the crime thriller Batla House chronicles the police encounter and investigation of the case.`,
-//           'duration':'2 hrs 26 mins',
-//           'releasing':' 15 Aug, 2019',
-//           'rating':'81%',
-//           'type':'Drama',
-//           'certi':'UA',
-//           'lang':'Hindi',
-//           'imgUrl':'https://akm-img-a-in.tosshub.com/indiatoday/images/story/201908/Batla-House-770x433.jpeg?EBRzCpcMPtKuJJvZ4eEz_9B2j6V.WT.o'
-//      },
-
-//      'Saaho':{
-//           'synopsis':`Saaho is a multi-lingual movie starring Prabhas and Shraddha Kapoor in prominent roles. The cast also includes Neil Nitin Mukesh and Jackie Shroff. It is a drama directed by Sujeeth with Shankar Mahadevan, Ehsaan Noorani and Loy Mendonsa as the music composers, forming part of the crew. `,
-//           'duration':'2 hrs 30 mins',
-//           'releasing':'30 Aug, 2019',
-//           'rating':'82%',
-//           'type':'Action,Thriller',
-//           'certi':'UA',
-//           'lang':'Hindi,Telugu,Tamil,Malayalam',
-//           'imgUrl':'https://s3.ap-south-1.amazonaws.com/hansindia-bucket/h-upload/feeds/2019/07/25/199218-saaho.jpg'
-//      },
-
-//      'Kabir Singh': {
-//           'synopsis':`A brilliant yet impulsive young surgeon falls into a path of self-destruction after the love of his life is forced to marry another man.`,
-//           'duration':'2 hrs 55 mins',
-//           'releasing':'21 Jun, 2019 ',
-//           'rating':'85%',
-//           'type':'Action,Drama,Romantic',
-//           'certi':'A',
-//           'lang':'Hindi',
-//           'imgUrl':'http://www.magnetothemall.com/wp-content/uploads/2018/12/Kabir-Singh-%E2%80%93-Movie-Poster-Shahid-Kapoor-Kiara-Advani-Sandeep-Reddy-Vanga-Poster-Design-In-Photoshop-Thumbnail.jpg'
-//      },
-
-//      'Once Upon A Time In Hollywood':{
-//           'synopsis':`Los Angeles, 1969. As the final chapter of Hollywood's golden age draws to a close, fading TV star Rick Dalton (Leonardo DiCaprio) and his longtime stunt double Cliff Booth (Brad Pitt) make their way around an industry they hardly recognize anymore.
-
-//           The ninth film from Quentin Tarantino features an ensemble cast and multiple storylines, and is a glowing tribute to the memories of a bygone era.`,
-//           'duration':'2 hrs 41 mins',
-//           'releasing':'15 Aug, 2019',
-//           'rating':'78%',
+//      'Bala':{
+//           'synopsis':`The film tells the story of Bala (Ayushmann Khurana) a man who is balding prematurely and how he copes with the situation. The film also narrates Bala's relationship with two women played by Yami Gautam and Bhumi Pednekar respectively.`,
+//           'duration':'2 hrs 09 mins',
+//           'releasing':' 8 Nov, 2019',
+//           'rating':'80%',
 //           'type':'Comedy,Drama',
+//           'certi':'UA',
+//           'lang':'Hindi',
+//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwj2ourgrozmAhWKxosBHV2BDu0QjRx6BAgBEAQ&url=https%3A%2F%2Fwww.scrabbl.com%2F-bala-official-trailer-makes-you-rofl-ayushmann-khurrana-strives-with-baldness-in-this-satirical-comedy&psig=AOvVaw1PeuPvNfjiayE_XU63lLRw&ust=1575011830778614'
+//      },
+
+//      '21 Bridges':{
+//           'synopsis':`Two cop killers are on the loose and a citywide manhunt is on for the criminals. In the middle of the mayhem is a diligent NYPD detective, who is determined to track them down at all costs. As all of Manhattan's 21 bridges are shut down and the situation spirals out of control, he soon becomes unsure of who to pursue - and who is in pursuit of him. `,
+//           'duration':'1 hrs 42 mins',
+//           'releasing':'22 Nov, 2019',
+//           'rating':'74%',
+//           'type':'Drama,Thriller',
 //           'certi':'A',
 //           'lang':'English',
-//           'imgUrl':'https://radioimg.s3.amazonaws.com/mix947/styles/delta__775x515/s3/onceUponATimeInHollywood775x515.png?5g0YTyeiP0u4.GRwAR32kfHegyXVmCzB&itok=V96XV35a'
+//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjCzMGer4zmAhUlL6YKHXxTCdEQjRx6BAgBEAQ&url=https%3A%2F%2Fynuk.tv%2F2019%2F05%2F07%2F21-bridges-trailer%2F&psig=AOvVaw1VvW9QhdMNk6nx7ZsLTPfZ&ust=1575011994601265'
 //      },
 
-//      'Fast & Furious: Hobbs & Shaw':{
-//           'synopsis':`When a cyber-genetically enhanced terrorist comes dangerously close to weaponising a deadly virus, arch-rivals Luke Hobbs and Deckard Shaw are left with no choice but to team up against the imminent threat.`,
-//           'duration':'2 hrs 16 mins',
-//           'releasing':'02 Aug, 2019',
-//           'rating':'82%',
-//           'type':'Action,Adventure,Comedy',
-//           'certi':'A',
-//           'lang':'English,Hindi,Tamil,Telugu',
-//           'imgUrl':'http://ecdn.banglatribune.com/contents/cache/images/825x0x1/uploads/media/2019/08/05/dbef004995f2486573cd253540961bd6-5d47d6b1d86ad.jpg'
+//      'Ford V Ferrari': {
+//           'synopsis':`Academy Award-winners Matt Damon and Christian Bale star in Ford v Ferrari, based on the remarkable true story of the visionary American car designer Carroll Shelby (Damon) and the fearless British-born driver Ken Miles (Bale), who together battled corporate interference, the laws of physics, and their own personal demons to build a revolutionary race car for Ford Motor Company and take on the dominating race cars of Enzo Ferrari at the 24 Hours of Le Mans in France in 1966.`,
+//           'duration':'2 hrs 35 mins',
+//           'releasing':'15 Nov, 2019 ',
+//           'rating':'93%',
+//           'type':'Action,Biography,Drama',
+//           'certi':'UA',
+//           'lang':'English',
+//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwi0r_fMr4zmAhUPx4sBHeNuAaYQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.metaflix.com%2Fmovie-news%2F2019%2F6%2F3%2Ffirst-poster-trailer-for-ford-v-ferrari-starring-matt-damon-and-christian-bale&psig=AOvVaw1xqmq6oVw9qrdebhZqR5R-&ust=1575012133053470'
 //      },
 
-//      'The Angry Birds Movie 2':{
-//           'synopsis':`The epic battle between the grumpy bunch of flightless birds and the crafty green pigs reaches the next level in this sequel to the hit 2016 film.`,
-//           'duration':'1 hrs 36 mins',
-//           'releasing':'23 Aug, 2019',
-//           'rating':'75%',
-//           'type':'Animation,Comedy',
-//           'certi':'U',
-//           'lang':'Enlish,Hindi,Telugu,Tamil',
-//           'imgUrl':'http://genknews.genkcdn.vn/thumb_w/640/2019/6/21/anh-1-1561096560686519836335.jpg'
-//      },
-
-//      'IT: Chapter Two':{
-//           'synopsis':`The film is Muschietti's follow-up to 2017's critically acclaimed and massive worldwide box office hit "IT", which grossed over $700 million globally. Both redefining and transcending the genre, "IT" became part of the cultural zeitgeist as well as the highest-grossing horror film of all time.
-
-//           Because every 27 years evil revisits the town of Derry, Maine, It: Chapter 2 brings the characters who have long since gone their separate ways, back together as adults, nearly three decades after the events of the first film.`,
-//           'duration':'2 hrs 50 mins',
-//           'releasing':'06 Sep, 2019',
-//           'rating':'74%',
-//           'type':'Horror',
-//           'certi':'A',
-//           'lang':'English,Hindi,Telugu,Tamil',
-//           'imgUrl':'https://bloody-disgusting.com/wp-content/uploads/2019/07/it-ends.png'
-//      },
-
-//      'Chhichhore':{
-//           'synopsis':`Chhichhore takes you on an exuberant and hilarious journey through college life where you meet a bunch of interesting 'losers': Anni, Maya, Sexa, Derek, Mummy, Acid, and Bevda. They as a group go through a seamless transition from past to present and end up at a reunion they could never have thought of.`,
-//           'duration':'2 hrs 26 mins',
-//           'releasing':'06 Sep, 2019',
-//           'rating':'89%',
-//           'type':'Comedy,Drama,Romantic',
+//      'Pagalpanti':{
+//           'synopsis':`A group of tourists from India set out on a vacation only to have the trip turn into a patriotic mission. Can they pull it off?`,
+//           'duration':'2 hrs 32 mins',
+//           'releasing':'22 Nov, 2019',
+//           'rating':'64%',
+//           'type':'Comedy',
 //           'certi':'UA',
 //           'lang':'Hindi',
-//           'imgUrl':'https://1.bp.blogspot.com/-idlFtuVZDNE/XWhpWLWncCI/AAAAAAAAAXQ/dwy5vTwyl-QpbD1dQ9wlzYAhF9Eg6NAigCLcBGAs/s1600/Chhichhore%2BFull%2BHD%2BMovie%2BDownload%2B720p.jpg'
+//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiXu8D7r4zmAhVDwosBHcTrCYYQjRx6BAgBEAQ&url=https%3A%2F%2Ftimesofindia.indiatimes.com%2Fentertainment%2Fhindi%2Fbollywood%2Fnews%2Fpagalpanti-ahead-of-the-trailer-release-ileana-dcruz-teases-her-fans-with-quirky-new-posters%2Farticleshow%2F71699371.cms&psig=AOvVaw2WSirgVzv8ATbhbIYvn7nh&ust=1575012197039682'
+//      },
+
+//      'Frozen 2':{
+//           'synopsis':`Three years after the events of Frozen, Elsa begins to hear strange voices calling to her from the forest and all of a sudden Arendelle finds itself in danger. Elsa, Anna, Kristoff, Olaf and Sven must go beyond Arendelle to find the origin of Elsa's powers and save their kingdom.`,
+//           'duration':'1 hrs 43 mins',
+//           'releasing':'22 Nov, 2019',
+//           'rating':'85%',
+//           'type':'Animation,Adventure,Comedy',
+//           'certi':'U',
+//           'lang':'English,Hindi,Tamil,Telugu',
+//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwi5mNbytIzmAhU9x4sBHWsLDBIQjRx6BAgBEAQ&url=https%3A%2F%2Fmovies.disney.com%2Ffrozen-2&psig=AOvVaw2Ygy1JN4ECkBk5bP9Spx9V&ust=1575013554621719'
+//      },
+
+//      'Marjaavaan':{
+//           'synopsis':`Marjaavaan is a story of love birds Raghu and Zoya enjoying their lives until a vertically challenged gang leader with harmful intentions turns their world upside down.`,
+//           'duration':'2 hrs 17 mins',
+//           'releasing':'15 Nov, 2019',
+//           'rating':'70%',
+//           'type':'Action,Drama,Romantic',
+//           'certi':'UA',
+//           'lang':'Hindi',
+//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwjY_oXDtYzmAhVxGaYKHRSwAiwQjRx6BAgBEAQ&url=https%3A%2F%2Feconomictimes.indiatimes.com%2Fmagazines%2Fpanache%2Fmarjaavaan-review-clichd-narrative-feels-out-of-place-in-the-current-slick-bwood%2Farticleshow%2F72104933.cms&psig=AOvVaw3U23HI8gioHZURHYJqJ5DA&ust=1575013646946328'
+//      },
+
+//      'Housefull 4':{
+//           'synopsis':`When 6 lovers are parted because of conspiracy and revenge in the year 1419, the characters cross paths again in 2019. However, in the present life the 3 boys are about to marry their sisters-in-law and the pairings are in the wrong order. Destiny repeats itself when the 3 couples who are choosing their wedding destination all land up in Sitamgarh again, where it all began. Will they remember their past lives in time for marriage or will they be stuck with the wrong lovers forever? Housefull 4 is coming to confuse you, put you on a laughing riot and take you through the grandeur of 1419 with a spark of 2019. Come & witness this Epic Reincarnation Comedy.`,
+//           'duration':'2 hrs 22 mins',
+//           'releasing':'25 Oct, 2019',
+//           'rating':'68%',
+//           'type':'Comedy,Fantasy',
+//           'certi':'UA',
+//           'lang':'Hindi',
+//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwiQmev7tYzmAhVSyosBHW4HDUkQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.thestatesman.com%2Fentertainment%2Fhousefull-4-makers-release-another-poster-1502803761.html&psig=AOvVaw1IvDHybadvlEl41SFhHVaR&ust=1575013796865597'
+//      },
+
+//      'Joker':{
+//           'synopsis':`Arthur Fleck, a man struggling with loneliness and isolation, wears two masks. One, he paints on for his day job as a clown. The other is a guise he projects in an attempt to find his place in Gotham City's fractured society. Caught in a cyclical existence between apathy and cruelty, Arthur begins to make one bad decision after another. What follows is a new take on the origin story of one of cinema's most iconic villains.`,
+//           'duration':'2 hrs 04 mins',
+//           'releasing':'04 Oct, 2019',
+//           'rating':'86%',
+//           'type':'Crime,Fantasy,Thriller',
+//           'certi':'A',
+//           'lang':'English',
+//           'imgUrl':'https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjf9LqutozmAhVkIqYKHZDODeEQjRx6BAgBEAQ&url=%2Furl%3Fsa%3Di%26source%3Dimages%26cd%3D%26ved%3D%26url%3Dhttps%253A%252F%252Ffilmspell.com%252Fjoker2019-movie-review-unabashedly-champions-evil%252F%26psig%3DAOvVaw0bjxBsVRCucTIETcl7WKE1%26ust%3D1575013906502771&psig=AOvVaw0bjxBsVRCucTIETcl7WKE1&ust=1575013906502771'
 
 //      }
 

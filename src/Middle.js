@@ -70,19 +70,19 @@ class Middle extends Component {
          <h1>Book Your Seat Right Now </h1>
         <div class="carousel-inner sliding">
           <div class="carousel-item active" data-interval="3000">
-            <img src={require('./Movie/nine.png')} class="d-block w-100" />
+            <img src={require('./Images/m2.jpg')} class="d-block w-100" />
            </div>
     
            <div class="carousel-item" data-interval="2000">
-            <img src={require('./Movie/eight2.png')} class="d-block w-100"  />
+            <img src={require('./Images/m4.jpg')} class="d-block w-100"  />
           </div>
     
           <div class="carousel-item" data-interval="2000">
-            <img src={require('./Movie/seven2.png')} class="d-block w-100"  />
+            <img src={require('./Images/m3.jpg')} class="d-block w-100"  />
           </div>
 
           <div class="carousel-item">
-            <img src={require('./Movie/one.png')} class="d-block w-100"  />
+            <img src={require('./Images/m1.jpg')} class="d-block w-100"  />
           </div>
         </div>
   <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
