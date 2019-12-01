@@ -15,7 +15,7 @@ this.signin=()=>{
      
      else{
         localStorage.setItem('token',result.data.token) 
-        localStorage.setItem('userName',uname)
+        localStorage.setItem('userName',result.data.Name)
         alert("Successfully SignedIn!")
          window.location.reload();
 

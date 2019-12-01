@@ -101,6 +101,7 @@ document.addEventListener("click",(e)=>{
 
     else if(e.target.id=="menuBack"){
         document.getElementById("menuBar").style.width="0"
+        setTimeout(() => {document.getElementById("menuBar").style.display="none"}, 1000);
         i--;  
     }
 

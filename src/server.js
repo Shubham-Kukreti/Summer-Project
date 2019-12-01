@@ -308,9 +308,10 @@ app.post('/signIn',(req,res)=>{
         }
 
               else{
+               
                   var token=new Date().getDate()+myKey;
                   var token2=crypto.SHA256(token).toString();
-                   res.send({'token':token2});
+                   res.send({'token':token2,'Name':result.FirstName});
         
    }
         })
@@ -322,7 +323,7 @@ app.post('/bookingHistory',(req,res)=>{
      mongoClient.connect(mdkey,(err,db)=>{
           if(err) throw err;
           var dbo=db.db('movieOn');
-          dbo.collection('UserInfo').findOne({UserName:req.body.uname},(err,result)=>{
+          dbo.collection('UserInfo').findOne({FirstName:req.body.uname},(err,result)=>{
                if(err) throw err;  
     
                else if(result.BookedTickets==""){
